@@ -73,7 +73,7 @@ The project involved field interaction with the Cyber Cell and an awareness surv
 
 Visit the live website:
 
-https://posantra.github.io/nirbhaysetu/
+https://posantra.github.io/NirbhaySetu/
 
 ## Organization
 
