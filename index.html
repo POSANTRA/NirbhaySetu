@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="NirbhaySetu - Simple cybercrime reporting and safety guidance in English, Marathi and Hindi">
+
+    <meta name="theme-color" content="#12243A">
+
+    <title>NirbhaySetu — Cyber Safety Guide</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="#home" class="brand">
+
+                <div class="brand-mark">
+
+                    <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                        <path
+                            class="logo-shield"
+                            d="M32 5L53 13V29C53 43 44.5 54 32 59C19.5 54 11 43 11 29V13L32 5Z"/>
+
+                        <path
+                            class="logo-bridge"
+                            d="M18 38C22 33 27 31 32 31C37 31 42 33 46 38"/>
+
+                        <path
+                            class="logo-bridge"
+                            d="M18 44C22 39 27 37 32 37C37 37 42 39 46 44"/>
+
+                        <circle cx="32" cy="22" r="4"/>
+
+                        <path
+                            class="logo-line"
+                            d="M32 26V37"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="brand-copy">
+
+                    <strong>NIRBHAYSETU</strong>
+
+                    <span data-i18n="brandTagline">
+                        CYBER SAFETY GUIDE
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="#home" data-i18n="navHome">Home</a>
+
+                <a href="#situations" data-i18n="navHelp">Get Help</a>
+
+                <a href="#reporting" data-i18n="navReport">Report</a>
+
+                <a href="#about" data-i18n="navAbout">About</a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <label for="languageSelect" class="sr-only">
+                    Language
+                </label>
+
+                <select id="languageSelect">
+
+                    <option value="en">English</option>
+                    <option value="mr">मराठी</option>
+                    <option value="hi">हिन्दी</option>
+
+                </select>
+
+
+                <button
+                    id="textSizeBtn"
+                    class="text-size"
+                    type="button"
+                    aria-label="Increase text size">
+
+                    A+
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section id="home" class="hero">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+
+                        <span data-i18n="eyebrow">
+                            SIMPLE • PRACTICAL • LOCAL
+                        </span>
+                    </div>
+
+
+                    <h1 data-i18n="heroTitle">
+                        Cybercrime happened.
+                        <span>What should you do now?</span>
+                    </h1>
+
+
+                    <p
+                        class="hero-description"
+                        data-i18n="heroDescription">
+
+                        NirbhaySetu helps you understand the situation,
+                        take immediate action and find the right reporting
+                        channel.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#situations"
+                            class="btn btn-primary">
+
+                            <span data-i18n="findSituation">
+                                Find My Situation
+                            </span>
+
+                            <span class="btn-arrow">→</span>
+
+                        </a>
+
+
+                        <button
+                            id="helpNowBtn"
+                            class="btn btn-emergency"
+                            type="button">
+
+                            <span>⚠</span>
+
+                            <span data-i18n="helpNow">
+                                I NEED HELP NOW
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-callout">
+
+                        <div class="callout-icon">
+                            1930
+                        </div>
+
+                        <div>
+
+                            <strong data-i18n="financialAlertTitle">
+                                Money lost through cyber fraud?
+                            </strong>
+
+                            <p data-i18n="financialAlertText">
+                                Call 1930 immediately.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="visual-card">
+
+                        <div class="visual-top">
+
+                            <span data-i18n="guideLabel">
+                                GUIDED ACTION
+                            </span>
+
+                            <span class="live-dot">
+                                ●
+                            </span>
+
+                        </div>
+
+
+                        <div class="visual-icon">
+                            🛡
+                        </div>
+
+
+                        <h2 data-i18n="visualTitle">
+                            One problem.
+                            <br>
+                            Clear next steps.
+                        </h2>
+
+
+                        <div class="visual-steps">
+
+                            <div>
+                                <span>01</span>
+                                <p data-i18n="stepOne">Understand</p>
+                            </div>
+
+                            <div>
+                                <span>02</span>
+                                <p data-i18n="stepTwo">Secure</p>
+                            </div>
+
+                            <div>
+                                <span>03</span>
+                                <p data-i18n="stepThree">Report</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SITUATIONS ================= -->
+
+        <section id="situations" class="situations section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-kicker">
+                        01
+                    </div>
+
+                    <div>
+
+                        <p class="section-label"
+                           data-i18n="situationLabel">
+                            START HERE
+                        </p>
+
+                        <h2 data-i18n="situationTitle">
+                            What happened to you?
+                        </h2>
+
+                        <p data-i18n="situationDescription">
+                            Choose the situation closest to what happened.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="situation-grid">
+
+
+                    <!-- MONEY -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="money"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">01</div>
+
+                        <div class="situation-icon">₹</div>
+
+                        <h3 data-i18n="cardMoneyTitle">
+                            Money Lost
+                        </h3>
+
+                        <p data-i18n="cardMoneyText">
+                            UPI, bank or payment fraud
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- OTP -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="otp"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">02</div>
+
+                        <div class="situation-icon">☎</div>
+
+                        <h3 data-i18n="cardOtpTitle">
+                            Fake Call / OTP
+                        </h3>
+
+                        <p data-i18n="cardOtpText">
+                            Someone asked for OTP or banking details
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- LINK -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="suspicious"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">03</div>
+
+                        <div class="situation-icon">↗</div>
+
+                        <h3 data-i18n="cardLinkTitle">
+                            Suspicious Link
+                        </h3>
+
+                        <p data-i18n="cardLinkText">
+                            Phishing message or fake website
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- SOCIAL -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="social"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">04</div>
+
+                        <div class="situation-icon">◎</div>
+
+                        <h3 data-i18n="cardSocialTitle">
+                            Social Account Hacked
+                        </h3>
+
+                        <p data-i18n="cardSocialText">
+                            Account taken over or compromised
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- HARASSMENT -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="harassment"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">05</div>
+
+                        <div class="situation-icon">!</div>
+
+                        <h3 data-i18n="cardHarassmentTitle">
+                            Online Harassment
+                        </h3>
+
+                        <p data-i18n="cardHarassmentText">
+                            Threats, stalking or unwanted messages
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- FAKE PROFILE -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="identity"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">06</div>
+
+                        <div class="situation-icon">◯</div>
+
+                        <h3 data-i18n="cardIdentityTitle">
+                            Fake Profile
+                        </h3>
+
+                        <p data-i18n="cardIdentityText">
+                            Someone is impersonating you
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- SHOPPING -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="shopping"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">07</div>
+
+                        <div class="situation-icon">□</div>
+
+                        <h3 data-i18n="cardShoppingTitle">
+                            Shopping Fraud
+                        </h3>
+
+                        <p data-i18n="cardShoppingText">
+                            Fake seller, product or payment
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- JOB -->
+
+                    <article
+                        class="situation-card"
+                        data-guide="job"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">08</div>
+
+                        <div class="situation-icon">▣</div>
+
+                        <h3 data-i18n="cardJobTitle">
+                            Fake Job Scam
+                        </h3>
+
+                        <p data-i18n="cardJobText">
+                            Fraudulent job or work offer
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- PHONE -->
+
+                    <article
+                        class="situation-card featured-card"
+                        data-guide="phone"
+                        tabindex="0"
+                        role="button">
+
+                        <div class="card-number">09</div>
+
+                        <div class="situation-icon">⌁</div>
+
+                        <h3 data-i18n="cardPhoneTitle">
+                            Lost / Stolen Mobile
+                        </h3>
+
+                        <p data-i18n="cardPhoneText">
+                            Find, lock and secure your phone
+                        </p>
+
+                        <span class="card-link">
+                            <span data-i18n="viewGuide">View guide</span>
+                            →
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REPORTING ================= -->
+
+        <section id="reporting" class="reporting section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-kicker">
+                        02
+                    </div>
+
+                    <div>
+
+                        <p class="section-label"
+                           data-i18n="reportLabel">
+                            OFFICIAL CHANNELS
+                        </p>
+
+                        <h2 data-i18n="reportTitle">
+                            Report through the right channel.
+                        </h2>
+
+                        <p data-i18n="reportDescription">
+                            Use official services for reporting and assistance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-grid">
+
+
+                    <a
+                        href="https://www.cybercrime.gov.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="report-item">
+
+                        <div class="report-symbol">
+                            01
+                        </div>
+
+                        <div class="report-content">
+
+                            <span class="report-type">
+                                NCRP
+                            </span>
+
+                            <h3>
+                                National Cyber Crime
+                                Reporting Portal
+                            </h3>
+
+                            <p data-i18n="ncrpText">
+                                Report applicable cybercrime online.
+                            </p>
+
+                        </div>
+
+                        <span class="external-arrow">↗</span>
+
+                    </a>
+
+
+                    <a
+                        href="tel:1930"
+                        class="report-item report-important">
+
+                        <div class="report-symbol">
+                            02
+                        </div>
+
+                        <div class="report-content">
+
+                            <span class="report-type">
+                                24 × 7
+                            </span>
+
+                            <h3>
+                                1930 Cyber Helpline
+                            </h3>
+
+                            <p data-i18n="helplineText">
+                                Immediate reporting of cyber financial fraud.
+                            </p>
+
+                        </div>
+
+                        <span class="external-arrow">→</span>
+
+                    </a>
+
+
+                    <a
+                        href="https://sancharsaathi.gov.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="report-item">
+
+                        <div class="report-symbol">
+                            03
+                        </div>
+
+                        <div class="report-content">
+
+                            <span class="report-type">
+                                TELECOM
+                            </span>
+
+                            <h3>
+                                Sanchar Saathi
+                            </h3>
+
+                            <p data-i18n="sancharText">
+                                Telecom and mobile-related services.
+                            </p>
+
+                        </div>
+
+                        <span class="external-arrow">↗</span>
+
+                    </a>
+
+
+                    <a
+                        href="tel:112"
+                        class="report-item">
+
+                        <div class="report-symbol">
+                            04
+                        </div>
+
+                        <div class="report-content">
+
+                            <span class="report-type">
+                                EMERGENCY
+                            </span>
+
+                            <h3>
+                                112 Emergency
+                            </h3>
+
+                            <p data-i18n="emergencyText">
+                                For immediate emergency assistance.
+                            </p>
+
+                        </div>
+
+                        <span class="external-arrow">→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="about section">
+
+            <div class="container about-grid">
+
+                <div>
+
+                    <p class="section-label"
+                       data-i18n="aboutLabel">
+                        ABOUT NIRBHAYSETU
+                    </p>
+
+                    <h2 data-i18n="aboutTitle">
+                        From confusion to the next right action.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <p data-i18n="aboutText">
+                        NirbhaySetu is designed to make cybercrime
+                        reporting easier for people who may not know
+                        technical terms or where to begin.
+                    </p>
+
+
+                    <div class="about-points">
+
+                        <div>
+                            <strong>01</strong>
+                            <span data-i18n="aboutPoint1">
+                                Simple language
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>02</strong>
+                            <span data-i18n="aboutPoint2">
+                                English • Marathi • Hindi
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>03</strong>
+                            <span data-i18n="aboutPoint3">
+                                Action before explanation
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DISCLAIMER ================= -->
+
+        <section class="disclaimer">
+
+            <div class="container disclaimer-inner">
+
+                <span class="disclaimer-mark">
+                    i
+                </span>
+
+                <p data-i18n="disclaimer">
+                    NirbhaySetu is an awareness and guidance project.
+                    It does not replace police, legal or professional advice.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= HELP MODAL ================= -->
+
+    <div
+        id="helpModal"
+        class="modal"
+        aria-hidden="true">
+
+        <div class="modal-box emergency-box">
+
+            <button
+                id="closeHelpModal"
+                class="modal-close"
+                type="button"
+                aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <span class="modal-kicker">
+                NIRBHAYSETU
+            </span>
+
+            <h2 data-i18n="modalTitle">
+                Need help right now?
+            </h2>
+
+            <p data-i18n="modalText">
+                Choose the action that matches your situation.
+            </p>
+
+
+            <div class="quick-actions">
+
+                <a href="tel:1930">
+
+                    <span class="quick-number">
+                        1930
+                    </span>
+
+                    <div>
+
+                        <strong data-i18n="modal1930">
+                            Cyber Financial Fraud
+                        </strong>
+
+                        <small data-i18n="modal1930Text">
+                            Call immediately if money was lost.
+                        </small>
+
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+
+                <a
+                    href="https://www.cybercrime.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <span class="quick-number">
+                        NCRP
+                    </span>
+
+                    <div>
+
+                        <strong data-i18n="modalNcrp">
+                            Report Cybercrime
+                        </strong>
+
+                        <small data-i18n="modalNcrpText">
+                            National Cyber Crime Reporting Portal.
+                        </small>
+
+                    </div>
+
+                    <span>↗</span>
+
+                </a>
+
+
+                <a href="tel:112">
+
+                    <span class="quick-number">
+                        112
+                    </span>
+
+                    <div>
+
+                        <strong data-i18n="modal112">
+                            Emergency
+                        </strong>
+
+                        <small data-i18n="modal112Text">
+                            For immediate emergency assistance.
+                        </small>
+
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= GUIDE MODAL ================= -->
+
+    <div
+        id="guideModal"
+        class="modal"
+        aria-hidden="true">
+
+        <div class="guide-box">
+
+            <button
+                id="closeGuideModal"
+                class="modal-close"
+                type="button"
+                aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <div id="guideContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <div class="footer-mini-logo">
+
+                    <svg viewBox="0 0 64 64">
+
+                        <path
+                            class="logo-shield"
+                            d="M32 5L53 13V29C53 43 44.5 54 32 59C19.5 54 11 43 11 29V13L32 5Z"/>
+
+                        <path
+                            class="logo-bridge"
+                            d="M18 38C22 33 27 31 32 31C37 31 42 33 46 38"/>
+
+                        <path
+                            class="logo-bridge"
+                            d="M18 44C22 39 27 37 32 37C37 37 42 39 46 44"/>
+
+                        <circle cx="32" cy="22" r="4"/>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <strong>NIRBHAYSETU</strong>
+
+                    <span data-i18n="footerTagline">
+                        Bridge to a safer digital world.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-right">
+
+                <span>© 2026 POSANTRA. All rights reserved.</span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
