@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://posantra.github.io/NirbhaySetu/sitemap.xml
