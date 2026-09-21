@@ -2363,438 +2363,433 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
+/* =====================================================
+   STATISTICS
+   SHARED SUPABASE STATISTICS
+   ===================================================== */
 
-    const defaultStatistics = {
+const defaultStatistics = {
 
-        visitors: 0,
+    visitors: 0,
+
+    sections: {
+
+        money: 0,
+        otp: 0,
+        suspicious: 0,
+        social: 0,
+        harassment: 0,
+        identity: 0,
+        shopping: 0,
+        job: 0,
+        phone: 0
+
+    }
+
+};
+
+
+/* =====================================================
+   FORMAT STAT NUMBER
+   ===================================================== */
+
+function formatStatNumber(number) {
+
+    return String(
+        Number(number) || 0
+    ).padStart(3, "0");
+
+}
+
+
+/* =====================================================
+   UPDATE STATISTICS UI
+   ===================================================== */
+
+function updateStatisticsUI(stats = null) {
+
+    /*
+       If Supabase has not returned data yet,
+       use zero values temporarily.
+    */
+
+    const safeStats = {
+
+        visitors:
+            Number(
+                stats?.visitors
+            ) || 0,
 
         sections: {
 
-            money: 0,
-            otp: 0,
-            suspicious: 0,
-            social: 0,
-            harassment: 0,
-            identity: 0,
-            shopping: 0,
-            job: 0,
-            phone: 0
+            ...defaultStatistics.sections,
+
+            ...(stats?.sections || {})
 
         }
 
     };
 
 
-    function createDefaultStatistics() {
+    /* =================================================
+       ELEMENTS
+       ================================================= */
 
-        return {
-            visitors: 0,
+    const visitorCount =
+        document.getElementById(
+            "visitorCount"
+        );
 
-            sections: {
-                ...defaultStatistics.sections
-            }
-        };
+    const statsVisitors =
+        document.getElementById(
+            "statsVisitors"
+        );
+
+    const totalSectionViews =
+        document.getElementById(
+            "totalSectionViews"
+        );
+
+    const mostViewedSection =
+        document.getElementById(
+            "mostViewedSection"
+        );
+
+    const mostViewedCount =
+        document.getElementById(
+            "mostViewedCount"
+        );
+
+
+    /* =================================================
+       VISITOR COUNT
+       ================================================= */
+
+    if (visitorCount) {
+
+        visitorCount.textContent =
+            formatStatNumber(
+                safeStats.visitors
+            );
 
     }
 
 
-    function getStatistics() {
+    if (statsVisitors) {
 
-        try {
-
-            const saved =
-                localStorage.getItem(
-                    STAT_STORAGE_KEY
-                );
-
-
-            if (!saved) {
-
-                return createDefaultStatistics();
-
-            }
-
-
-            const parsed =
-                JSON.parse(saved);
-
-
-            return {
-
-                visitors:
-                    Number(parsed.visitors) || 0,
-
-                sections: {
-
-                    ...defaultStatistics.sections,
-
-                    ...(parsed.sections || {})
-
-                }
-
-            };
-
-        } catch (error) {
-
-            return createDefaultStatistics();
-
-        }
+        statsVisitors.textContent =
+            formatStatNumber(
+                safeStats.visitors
+            );
 
     }
 
 
-    function saveStatistics(stats) {
+    /* =================================================
+       TOTAL SECTION VIEWS
+       ================================================= */
 
-        try {
+    const totalViews =
+        Object.values(
+            safeStats.sections
+        )
+        .reduce(
+            (sum, value) =>
+                sum + (
+                    Number(value) || 0
+                ),
+            0
+        );
 
-            localStorage.setItem(
-                STAT_STORAGE_KEY,
-                JSON.stringify(stats)
+
+    if (totalSectionViews) {
+
+        totalSectionViews.textContent =
+            formatStatNumber(
+                totalViews
             );
-
-        } catch (error) {
-
-            console.warn(
-                "Statistics could not be saved.",
-                error
-            );
-
-        }
 
     }
 
 
-    function formatStatNumber(number) {
+    /* =================================================
+       MOST VIEWED SECTION
+       ================================================= */
 
-        return String(
-            Number(number) || 0
-        ).padStart(3, "0");
+    let mostViewedType = null;
 
-    }
-
-
-    function updateStatisticsUI() {
-
-        const stats =
-            getStatistics();
+    let highestViews = 0;
 
 
-        const visitorCount =
-            document.getElementById(
-                "visitorCount"
-            );
+    Object.keys(
+        safeStats.sections
+    )
+    .forEach(type => {
 
-        const statsVisitors =
-            document.getElementById(
-                "statsVisitors"
-            );
-
-        const totalSectionViews =
-            document.getElementById(
-                "totalSectionViews"
-            );
-
-        const mostViewedSection =
-            document.getElementById(
-                "mostViewedSection"
-            );
-
-        const mostViewedCount =
-            document.getElementById(
-                "mostViewedCount"
-            );
+        const views =
+            Number(
+                safeStats.sections[type]
+            ) || 0;
 
 
-        /* -----------------------------------------------
-           VISITOR COUNT
-           ----------------------------------------------- */
+        if (views > highestViews) {
 
-        if (visitorCount) {
+            highestViews =
+                views;
 
-            visitorCount.textContent =
-                formatStatNumber(
-                    stats.visitors
-                );
+            mostViewedType =
+                type;
 
         }
 
-
-        if (statsVisitors) {
-
-            statsVisitors.textContent =
-                formatStatNumber(
-                    stats.visitors
-                );
-
-        }
+    });
 
 
-        /* -----------------------------------------------
-           TOTAL SECTION VIEWS
-           ----------------------------------------------- */
+    if (mostViewedSection) {
 
-        const totalViews =
-            Object.values(stats.sections)
-                .reduce(
-                    (sum, value) =>
-                        sum + (Number(value) || 0),
-                    0
-                );
+        if (mostViewedType) {
 
+            /*
+               sectionNames[type] in your existing
+               project contains the language names.
+            */
 
-        if (totalSectionViews) {
-
-            totalSectionViews.textContent =
-                formatStatNumber(
-                    totalViews
-                );
-
-        }
-
-
-        /* -----------------------------------------------
-           MOST VIEWED SECTION
-           ----------------------------------------------- */
-
-        let mostViewedType = null;
-
-        let highestViews = 0;
-
-
-        Object.keys(stats.sections)
-            .forEach(type => {
-
-                const views =
-                    Number(
-                        stats.sections[type]
-                    ) || 0;
-
-
-                if (views > highestViews) {
-
-                    highestViews =
-                        views;
-
-                    mostViewedType =
-                        type;
-
-                }
-
-            });
-
-
-        if (mostViewedSection) {
-
-            if (mostViewedType) {
+            if (
+                sectionNames[mostViewedType] &&
+                typeof sectionNames[mostViewedType] === "object"
+            ) {
 
                 mostViewedSection.textContent =
                     sectionNames[
                         mostViewedType
-                    ][currentLanguage];
+                    ][currentLanguage]
+                    ||
+                    sectionNames[
+                        mostViewedType
+                    ].en
+                    ||
+                    mostViewedType;
 
             } else {
 
                 mostViewedSection.textContent =
-                    currentLanguage === "mr"
-                        ? "अद्याप माहिती नाही"
-                        : currentLanguage === "hi"
-                            ? "अभी कोई डेटा नहीं"
-                            : "No data yet";
+                    mostViewedType;
 
             }
 
-        }
+        } else {
 
-
-        if (mostViewedCount) {
-
-            if (currentLanguage === "mr") {
-
-                mostViewedCount.textContent =
-                    `${highestViews} पाहणी`;
-
-            } else if (currentLanguage === "hi") {
-
-                mostViewedCount.textContent =
-                    `${highestViews} व्यू`;
-
-            } else {
-
-                mostViewedCount.textContent =
-                    `${highestViews} ${
-                        highestViews === 1
-                            ? "view"
-                            : "views"
-                    }`;
-
-            }
-
-        }
-
-
-        /* -----------------------------------------------
-           INDIVIDUAL SECTION VIEWS
-           ----------------------------------------------- */
-
-        Object.keys(sectionNames)
-            .forEach(type => {
-
-                const element =
-                    document.getElementById(
-                        `view-${type}`
-                    );
-
-
-                if (element) {
-
-                    element.textContent =
-                        formatStatNumber(
-                            stats.sections[type]
-                        );
-
-                }
-
-            });
-
-    }
-
-
-    /* =====================================================
-       COUNT VISITOR
-       ===================================================== */
-
-    function countVisitor() {
-
-        try {
-
-            if (
-                sessionStorage.getItem(
-                    VISITOR_SESSION_KEY
-                ) === "true"
-            ) {
-
-                return;
-
-            }
-
-
-            const stats =
-                getStatistics();
-
-
-            stats.visitors += 1;
-
-
-            saveStatistics(stats);
-
-
-            sessionStorage.setItem(
-                VISITOR_SESSION_KEY,
-                "true"
-            );
-
-        } catch (error) {
-
-            console.warn(
-                "Visitor count could not be recorded.",
-                error
-            );
+            mostViewedSection.textContent =
+                currentLanguage === "mr"
+                    ? "अद्याप माहिती नाही"
+                    : currentLanguage === "hi"
+                        ? "अभी कोई डेटा नहीं"
+                        : "No data yet";
 
         }
 
     }
 
 
-    /* =====================================================
-       COUNT SECTION VIEW
-       ===================================================== */
+    /* =================================================
+       MOST VIEWED COUNT
+       ================================================= */
 
-    function countSectionView(type) {
+    if (mostViewedCount) {
 
-        if (!sectionNames[type]) {
+        if (currentLanguage === "mr") {
+
+            mostViewedCount.textContent =
+                `${highestViews} पाहणी`;
+
+        } else if (currentLanguage === "hi") {
+
+            mostViewedCount.textContent =
+                `${highestViews} व्यू`;
+
+        } else {
+
+            mostViewedCount.textContent =
+                `${highestViews} ${
+                    highestViews === 1
+                        ? "view"
+                        : "views"
+                }`;
+
+        }
+
+    }
+
+
+    /* =================================================
+       INDIVIDUAL SECTION VIEWS
+       ================================================= */
+
+    Object.keys(
+        defaultStatistics.sections
+    )
+    .forEach(type => {
+
+        const element =
+            document.getElementById(
+                `view-${type}`
+            );
+
+
+        if (element) {
+
+            element.textContent =
+                formatStatNumber(
+                    safeStats.sections[type]
+                );
+
+        }
+
+    });
+
+}
+
+   /* =====================================================
+   COUNT VISITOR — SUPABASE
+   ===================================================== */
+
+async function countVisitor() {
+
+    try {
+
+        if (
+            sessionStorage.getItem(
+                VISITOR_SESSION_KEY
+            ) === "true"
+        ) {
 
             return;
 
         }
 
+        // Mark this browser session first
+        // to prevent duplicate counting on refresh
+        sessionStorage.setItem(
+            VISITOR_SESSION_KEY,
+            "true"
+        );
 
-        const stats =
-            getStatistics();
+        // Record visitor in Supabase
+        await recordEvent("visitor");
 
+    } catch (error) {
 
-        stats.sections[type] =
-            (Number(
-                stats.sections[type]
-            ) || 0) + 1;
-
-
-        saveStatistics(stats);
-
-        updateStatisticsUI();
+        console.warn(
+            "Visitor count could not be recorded.",
+            error
+        );
 
     }
 
+}
 
-    /* =====================================================
-       SECTION VIEWS SHOW / HIDE
-       ===================================================== */
 
-    const sectionViewsBtn =
-        document.getElementById(
-            "sectionViewsBtn"
+/* =====================================================
+   COUNT SECTION VIEW
+   ===================================================== */
+
+async function countSectionView(type) {
+
+    if (!sectionNames[type]) {
+        return;
+    }
+
+    try {
+
+        // Record section view in Supabase
+        await recordEvent(
+            "section_view",
+            type
         );
 
-    const sectionViewsTable =
-        document.getElementById(
-            "sectionViewsTable"
+        // Get latest shared statistics
+        const stats =
+            await loadSharedStatistics();
+
+        // Update displayed statistics
+        if (stats) {
+
+            updateStatisticsUI(stats);
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Section view could not be recorded.",
+            error
         );
 
+    }
 
-    if (
-        sectionViewsBtn &&
-        sectionViewsTable
-    ) {
-
-        sectionViewsBtn.addEventListener(
-            "click",
-            () => {
-
-                const isHidden =
-                    sectionViewsTable.classList
-                        .contains("hidden");
+}
 
 
-                if (isHidden) {
+/* =====================================================
+   SECTION VIEWS SHOW / HIDE
+   ===================================================== */
 
-                    sectionViewsTable.classList
-                        .remove("hidden");
+const sectionViewsBtn =
+    document.getElementById(
+        "sectionViewsBtn"
+    );
 
-                    sectionViewsBtn
-                        .setAttribute(
-                            "aria-expanded",
-                            "true"
-                        );
-
-                } else {
-
-                    sectionViewsTable.classList
-                        .add("hidden");
-
-                    sectionViewsBtn
-                        .setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                }
+const sectionViewsTable =
+    document.getElementById(
+        "sectionViewsTable"
+    );
 
 
-                translatePage();
+if (
+    sectionViewsBtn &&
+    sectionViewsTable
+) {
+
+    sectionViewsBtn.addEventListener(
+        "click",
+        () => {
+
+            const isHidden =
+                sectionViewsTable.classList
+                    .contains("hidden");
+
+
+            if (isHidden) {
+
+                sectionViewsTable.classList
+                    .remove("hidden");
+
+                sectionViewsBtn
+                    .setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+            } else {
+
+                sectionViewsTable.classList
+                    .add("hidden");
+
+                sectionViewsBtn
+                    .setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
             }
-        );
 
-    }
+
+            translatePage();
+
+        }
+    );
+
+}
 
 
     /* =====================================================
@@ -2818,13 +2813,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       INITIALIZE
-       ===================================================== */
+   INITIALIZE
+   ===================================================== */
 
-    countVisitor();
+translatePage();
 
-    updateStatisticsUI();
 
-    translatePage();
+// Load shared statistics from Supabase
+loadSharedStatistics()
+    .then(stats => {
 
-});
+        if (stats) {
+
+            updateStatisticsUI(
+                stats
+            );
+
+        } else {
+
+            updateStatisticsUI(
+                defaultStatistics
+            );
+
+        }
+
+    });
+
+
+// Count visitor
+countVisitor();
+
+
+// Reload statistics after visitor is recorded
+setTimeout(() => {
+
+    loadSharedStatistics()
+        .then(stats => {
+
+            if (stats) {
+
+                updateStatisticsUI(
+                    stats
+                );
+
+            }
+
+        });
+
+}, 500);
