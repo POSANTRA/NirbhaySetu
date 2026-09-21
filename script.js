@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Why NirbhaySetu?",
 
             aboutText:
-                "NirbhaySetu is a student-developed cybersecurity awareness and cybercrime reporting guide created as part of a college field project. It provides simple, practical guidance in English, Marathi and Hindi for common cybercrime situations.",
+                "NirbhaySetu is a trilingual Cybersecurity Awareness and Reporting Guide developed as part of the Field Project by the students of S.Y. B.Sc. Cyber Security, Department of Computer Studies, Haribhai V. Desai College of Arts, Science and Commerce, Pune (Autonomous). Its objective is to provide simple, practical guidance to help people understand cybercrime, identify common threats, and know the right steps to take when they face a cybercrime. The guide is available in English, Marathi, and Hindi for easier access and understanding.",
 
             disclaimerTitle:
                 "Important:",
