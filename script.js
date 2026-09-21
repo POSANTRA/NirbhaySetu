@@ -3,7 +3,97 @@
    Multilingual Guided Cyber Safety System
    ========================================================= */
 
+// ===============================
+// SUPABASE CONFIGURATION
+// ===============================
+
+const SUPABASE_URL = "https://dexoilvsxpyifssgixdw.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_zwoCP2k3Hehy1MbxuaH8GA_lKnz9STw";
+
+const SUPABASE_HEADERS = {
+  "apikey": SUPABASE_KEY,
+  "Authorization": `Bearer ${SUPABASE_KEY}`,
+  "Content-Type": "application/json"
+};
+// ===============================
+// SHARED STATISTICS
+// ===============================
+
+async function recordEvent(eventType, sectionName = null) {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/site_stats`,
+      {
+        method: "POST",
+        headers: {
+          ...SUPABASE_HEADERS,
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          event_type: eventType,
+          section_name: sectionName
+        })
+      }
+    );
+
+    if (!response.ok) {
+      console.error(
+        "Statistics error:",
+        await response.text()
+      );
+      return false;
+    }
+
+    return true;
+
+  } catch (error) {
+    console.error(
+      "Could not connect to statistics server:",
+      error
+    );
+    return false;
+  }
+}
+
+
+async function loadSharedStatistics() {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/get_nirbhaysetu_stats`,
+      {
+        method: "POST",
+        headers: SUPABASE_HEADERS,
+        body: "{}"
+      }
+    );
+
+    if (!response.ok) {
+      console.error(
+        "Could not load statistics:",
+        await response.text()
+      );
+      return null;
+    }
+
+    return await response.json();
+
+  } catch (error) {
+    console.error(
+      "Statistics connection error:",
+      error
+    );
+    return null;
+  }
+}
+
+// ===============================
+// YOUR EXISTING SCRIPT
+// ===============================
+
 document.addEventListener("DOMContentLoaded", () => {
+
+  // your existing code continues here...
 
 
     /* =====================================================
