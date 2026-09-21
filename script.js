@@ -5,33 +5,19 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     /* =====================================================
        OFFICIAL LINKS
        ===================================================== */
 
     const LINKS = {
-
-        cyberCrime:
-            "https://www.cybercrime.gov.in/",
-
-        android:
-            "https://www.google.com/android/find/",
-
-        iphone:
-            "https://www.icloud.com/find",
-
-        ceir:
-            "https://ceir.sancharsaathi.gov.in/",
-
-        sanchar:
-            "https://sancharsaathi.gov.in/",
-
-        helpline:
-            "tel:1930",
-
-        emergency:
-            "tel:112"
-
+        cyberCrime: "https://www.cybercrime.gov.in/",
+        android: "https://www.google.com/android/find/",
+        iphone: "https://www.icloud.com/find",
+        ceir: "https://ceir.sancharsaathi.gov.in/",
+        sanchar: "https://sancharsaathi.gov.in/",
+        helpline: "tel:1930",
+        emergency: "tel:112"
     };
 
 
@@ -47,40 +33,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentLanguage = savedLanguage;
 
-    languageSelect.value = currentLanguage;
-
 
     /* =====================================================
-       PAGE TRANSLATIONS
+       TRANSLATIONS
        ===================================================== */
 
     const translations = {
 
         en: {
 
-            brandTagline:
-                "CYBER SAFETY GUIDE",
+            lastUpdateLabel: "Last Update:",
+            visitorCountLabel: "Visitor Count:",
 
-            navHome:
-                "Home",
+            brandSubtitle: "CYBER SAFETY GUIDE",
 
-            navHelp:
-                "Get Help",
+            navHome: "Home",
+            navHelp: "Get Help",
+            navReport: "Report",
+            navStatistics: "Statistics",
+            navAbout: "About",
 
-            navReport:
-                "Report",
-
-            navAbout:
-                "About",
-
-            eyebrow:
-                "SIMPLE • PRACTICAL • LOCAL",
+            heroEyebrow:
+                "CYBER SAFETY • SIMPLE • PRACTICAL",
 
             heroTitle:
-                "Cybercrime happened. <span>What should you do now?</span>",
+                "Tell us what happened. NirbhaySetu tells you what to do next.",
 
             heroDescription:
-                "NirbhaySetu helps you understand the situation, take immediate action and find the right reporting channel.",
+                "A simple guide to help people understand common cybercrime situations, protect themselves and report incidents through official channels.",
 
             findSituation:
                 "Find My Situation",
@@ -88,169 +68,196 @@ document.addEventListener("DOMContentLoaded", () => {
             helpNow:
                 "I NEED HELP NOW",
 
-            financialAlertTitle:
-                "Money lost through cyber fraud?",
+            helplineText:
+                "National Cyber Financial Fraud Helpline",
 
-            financialAlertText:
-                "Call 1930 immediately.",
+            visualLabel:
+                "REPORT • PROTECT • RECOVER",
 
-            guideLabel:
-                "GUIDED ACTION",
+            situationsLabel:
+                "FIND MY SITUATION",
 
-            visualTitle:
-                "One problem.<br>Clear next steps.",
+            situationsTitle:
+                "What happened?",
 
-            stepOne:
-                "Understand",
-
-            stepTwo:
-                "Secure",
-
-            stepThree:
-                "Report",
-
-            situationLabel:
-                "START HERE",
-
-            situationTitle:
-                "What happened to you?",
-
-            situationDescription:
-                "Choose the situation closest to what happened.",
-
-            cardMoneyTitle:
-                "Money Lost",
-
-            cardMoneyText:
-                "UPI, bank or payment fraud",
-
-            cardOtpTitle:
-                "Fake Call / OTP",
-
-            cardOtpText:
-                "Someone asked for OTP or banking details",
-
-            cardLinkTitle:
-                "Suspicious Link",
-
-            cardLinkText:
-                "Phishing message or fake website",
-
-            cardSocialTitle:
-                "Social Account Hacked",
-
-            cardSocialText:
-                "Account taken over or compromised",
-
-            cardHarassmentTitle:
-                "Online Harassment",
-
-            cardHarassmentText:
-                "Threats, stalking or unwanted messages",
-
-            cardIdentityTitle:
-                "Fake Profile",
-
-            cardIdentityText:
-                "Someone is impersonating you",
-
-            cardShoppingTitle:
-                "Shopping Fraud",
-
-            cardShoppingText:
-                "Fake seller, product or payment",
-
-            cardJobTitle:
-                "Fake Job Scam",
-
-            cardJobText:
-                "Fraudulent job or work offer",
-
-            cardPhoneTitle:
-                "Lost / Stolen Mobile",
-
-            cardPhoneText:
-                "Find, lock and secure your phone",
+            situationsDescription:
+                "Select the situation closest to your problem to see practical next steps.",
 
             viewGuide:
-                "View guide",
+                "View Guide →",
 
-            reportLabel:
-                "OFFICIAL CHANNELS",
+            moneyTitle:
+                "Money Lost",
 
-            reportTitle:
-                "Report through the right channel.",
+            moneyShort:
+                "Money transferred because of a cyber fraud.",
 
-            reportDescription:
-                "Use official services for reporting and assistance.",
+            otpTitle:
+                "Fake Call / OTP",
 
-            ncrpText:
-                "Report applicable cybercrime online.",
+            otpShort:
+                "Fake calls, OTP requests or verification scams.",
 
-            helplineText:
-                "Immediate reporting of cyber financial fraud.",
+            suspiciousTitle:
+                "Suspicious Link",
 
-            sancharText:
-                "Telecom and mobile-related services.",
+            suspiciousShort:
+                "Phishing links, fake websites or harmful files.",
 
-            emergencyText:
-                "For immediate emergency assistance.",
+            socialTitle:
+                "Social Account Hacked",
+
+            socialShort:
+                "Your social media account may have been compromised.",
+
+            harassmentTitle:
+                "Online Harassment",
+
+            harassmentShort:
+                "Cyber harassment, stalking or threatening messages.",
+
+            identityTitle:
+                "Fake Profile",
+
+            identityShort:
+                "Someone is impersonating you online.",
+
+            shoppingTitle:
+                "Shopping Fraud",
+
+            shoppingShort:
+                "Online shopping, seller or refund scams.",
+
+            jobTitle:
+                "Fake Job Scam",
+
+            jobShort:
+                "Fake recruitment or work-from-home scams.",
+
+            phoneTitle:
+                "Lost / Stolen Mobile",
+
+            phoneShort:
+                "Steps to protect your phone, SIM and accounts.",
+
+            statisticsLabel:
+                "WEBSITE STATISTICS",
+
+            statisticsTitle:
+                "NirbhaySetu Activity",
+
+            statisticsDescription:
+                "Website usage and situation-guide views.",
+
+            totalVisitors:
+                "TOTAL VISITORS",
+
+            recordedVisitors:
+                "Recorded website visitors",
+
+            totalViews:
+                "TOTAL SECTION VIEWS",
+
+            guideOpened:
+                "Situation guides opened",
+
+            mostViewed:
+                "MOST VIEWED SECTION",
+
+            viewSectionViews:
+                "View Section Views",
+
+            hideSectionViews:
+                "Hide Section Views",
+
+            sectionViews:
+                "Section Views",
+
+            views:
+                "Views",
+
+            reportingLabel:
+                "OFFICIAL REPORTING",
+
+            reportingTitle:
+                "Report through official channels",
+
+            reportingDescription:
+                "Use official government channels for reporting and emergency assistance.",
+
+            cyberCrimePortal:
+                "Cyber Crime Portal",
+
+            cyberCrimePortalDesc:
+                "Report cybercrime online through the National Cyber Crime Reporting Portal.",
+
+            openPortal:
+                "Open Portal →",
+
+            helplineDescription:
+                "National helpline for cyber financial fraud.",
+
+            callNow:
+                "Call Now →",
+
+            sancharDescription:
+                "Services related to mobile connections and lost/stolen mobile devices.",
+
+            openWebsite:
+                "Open Website →",
+
+            emergencyDescription:
+                "Emergency assistance when immediate danger is involved.",
+
+            callEmergency:
+                "Call Emergency →",
 
             aboutLabel:
-                "ABOUT NIRBHAYSETU",
+                "ABOUT US",
 
             aboutTitle:
-                "From confusion to the next right action.",
+                "Why NirbhaySetu?",
 
             aboutText:
-                "NirbhaySetu is designed to make cybercrime reporting easier for people who may not know technical terms or where to begin.",
+                "NirbhaySetu is a student-developed cybersecurity awareness and cybercrime reporting guide created by our group as part of the college field project. The project aims to make cybercrime reporting easier by providing simple, practical guidance in English, Marathi and Hindi for common cybercrime situations. This project was made possible through the opportunity provided by H.V. Desai College to conduct field research, interact with the Cyber Cell and develop a practical solution for community awareness.",
 
-            aboutPoint1:
-                "Simple language",
+            disclaimerTitle:
+                "Important:",
 
-            aboutPoint2:
-                "English • Marathi • Hindi",
+            disclaimerText:
+                "NirbhaySetu provides general awareness and guidance. For an actual incident, use official reporting channels and follow instructions from the concerned authorities.",
 
-            aboutPoint3:
-                "Action before explanation",
+            helpModalTitle:
+                "Need Immediate Help?",
 
-            disclaimer:
-                "NirbhaySetu is an awareness and guidance project. It does not replace police, legal or professional advice.",
+            helpModalText:
+                "If you have lost money due to cyber financial fraud, call 1930 immediately and report the incident through the official Cyber Crime Reporting Portal.",
 
-            modalTitle:
-                "Need help right now?",
+            call1930:
+                "Call 1930",
 
-            modalText:
-                "Choose the action that matches your situation.",
+            reportOnline:
+                "Report Online",
 
-            modal1930:
-                "Cyber Financial Fraud",
-
-            modal1930Text:
-                "Call immediately if money was lost.",
-
-            modalNcrp:
-                "Report Cybercrime",
-
-            modalNcrpText:
-                "National Cyber Crime Reporting Portal.",
-
-            modal112:
-                "Emergency",
-
-            modal112Text:
-                "For immediate emergency assistance.",
-
-            footerTagline:
-                "Bridge to a safer digital world."
-
+            footerText:
+                "Cyber Safety & Reporting Guide"
         },
 
 
+        /* =================================================
+           MARATHI
+           ================================================= */
+
         mr: {
 
-            brandTagline:
-                "सायबर सुरक्षितता मार्गदर्शक",
+            lastUpdateLabel:
+                "शेवटचे अपडेट:",
+
+            visitorCountLabel:
+                "भेट देणाऱ्यांची संख्या:",
+
+            brandSubtitle:
+                "सायबर सुरक्षा मार्गदर्शक",
 
             navHome:
                 "मुख्यपृष्ठ",
@@ -261,1023 +268,200 @@ document.addEventListener("DOMContentLoaded", () => {
             navReport:
                 "तक्रार करा",
 
+            navStatistics:
+                "आकडेवारी",
+
             navAbout:
                 "आमच्याबद्दल",
 
-            eyebrow:
-                "सोपे • व्यावहारिक • स्थानिक",
+            heroEyebrow:
+                "सायबर सुरक्षा • सोपे • उपयुक्त",
 
             heroTitle:
-                "सायबर गुन्हा घडला. <span>आता काय करावे?</span>",
+                "काय घडले ते सांगा. पुढे काय करायचे ते निर्भयसेतू सांगेल.",
 
             heroDescription:
-                "NirbhaySetu तुम्हाला काय घडले हे समजून घेण्यास, त्वरित योग्य कृती करण्यास आणि योग्य तक्रार करण्याचे ठिकाण शोधण्यास मदत करते.",
+                "सामान्य सायबर गुन्ह्यांच्या परिस्थिती समजून घेण्यासाठी, स्वतःचे संरक्षण करण्यासाठी आणि अधिकृत माध्यमातून तक्रार करण्यासाठी सोपे मार्गदर्शन.",
 
             findSituation:
                 "माझी परिस्थिती शोधा",
 
             helpNow:
-                "मला आत्ताच मदत हवी",
+                "मला आत्ताच मदत हवी आहे",
 
-            financialAlertTitle:
-                "सायबर फसवणुकीत पैसे गेले आहेत?",
+            helplineText:
+                "राष्ट्रीय सायबर आर्थिक फसवणूक हेल्पलाइन",
 
-            financialAlertText:
-                "तात्काळ 1930 वर कॉल करा.",
+            visualLabel:
+                "तक्रार करा • संरक्षण करा • पुनर्प्राप्त करा",
 
-            guideLabel:
-                "मार्गदर्शित कृती",
+            situationsLabel:
+                "माझी परिस्थिती शोधा",
 
-            visualTitle:
-                "एक समस्या.<br>पुढील स्पष्ट पावले.",
+            situationsTitle:
+                "काय घडले?",
 
-            stepOne:
-                "समजून घ्या",
+            situationsDescription:
+                "तुमच्या समस्येशी संबंधित परिस्थिती निवडा आणि पुढील योग्य पावले जाणून घ्या.",
 
-            stepTwo:
-                "सुरक्षित करा",
+            viewGuide:
+                "मार्गदर्शक पहा →",
 
-            stepThree:
-                "तक्रार करा",
+            moneyTitle:
+                "पैसे गमावले",
 
-            situationLabel:
-                "येथून सुरुवात करा",
+            moneyShort:
+                "सायबर फसवणुकीमुळे पैसे हस्तांतरित झाले आहेत.",
 
-            situationTitle:
-                "तुमच्यासोबत काय घडले?",
-
-            situationDescription:
-                "तुमच्या परिस्थितीशी जुळणारा पर्याय निवडा.",
-
-            cardMoneyTitle:
-                "पैसे गेले",
-
-            cardMoneyText:
-                "UPI, बँक किंवा पेमेंट फसवणूक",
-
-            cardOtpTitle:
+            otpTitle:
                 "बनावट कॉल / OTP",
 
-            cardOtpText:
-                "OTP किंवा बँकिंग माहिती मागितली",
+            otpShort:
+                "बनावट कॉल, OTP मागणी किंवा पडताळणीची फसवणूक.",
 
-            cardLinkTitle:
+            suspiciousTitle:
                 "संशयास्पद लिंक",
 
-            cardLinkText:
-                "फिशिंग संदेश किंवा बनावट वेबसाइट",
+            suspiciousShort:
+                "फिशिंग लिंक, बनावट वेबसाइट किंवा संशयास्पद फाइल.",
 
-            cardSocialTitle:
+            socialTitle:
                 "सोशल मीडिया खाते हॅक",
 
-            cardSocialText:
-                "खाते दुसऱ्याने ताब्यात घेतले",
+            socialShort:
+                "तुमचे सोशल मीडिया खाते दुसऱ्याने ताब्यात घेतले असण्याची शक्यता.",
 
-            cardHarassmentTitle:
+            harassmentTitle:
                 "ऑनलाइन छळ",
 
-            cardHarassmentText:
-                "धमकी, पाठलाग किंवा त्रासदायक संदेश",
+            harassmentShort:
+                "सायबर छळ, ऑनलाइन पाठलाग किंवा धमकीचे संदेश.",
 
-            cardIdentityTitle:
+            identityTitle:
                 "बनावट प्रोफाइल",
 
-            cardIdentityText:
-                "कोणी तुमची ओळख वापरत आहे",
+            identityShort:
+                "कोणीतरी तुमची ओळख वापरून ऑनलाइन बनावट प्रोफाइल तयार केले आहे.",
 
-            cardShoppingTitle:
+            shoppingTitle:
                 "ऑनलाइन खरेदी फसवणूक",
 
-            cardShoppingText:
-                "बनावट विक्रेता, वस्तू किंवा पेमेंट",
+            shoppingShort:
+                "ऑनलाइन खरेदी, विक्रेता किंवा रिफंडशी संबंधित फसवणूक.",
 
-            cardJobTitle:
+            jobTitle:
                 "बनावट नोकरी फसवणूक",
 
-            cardJobText:
-                "फसवी नोकरी किंवा कामाची ऑफर",
+            jobShort:
+                "बनावट नोकरी, भरती किंवा घरून काम करण्याच्या नावाखाली फसवणूक.",
 
-            cardPhoneTitle:
-                "मोबाईल हरवला / चोरीला गेला",
+            phoneTitle:
+                "हरवलेला / चोरीला गेलेला मोबाईल",
 
-            cardPhoneText:
-                "मोबाईल शोधा, लॉक करा आणि सुरक्षित करा",
+            phoneShort:
+                "मोबाईल, SIM आणि खात्यांचे संरक्षण करण्यासाठी आवश्यक पावले.",
 
-            viewGuide:
-                "मार्गदर्शक पहा",
+            statisticsLabel:
+                "वेबसाइटची आकडेवारी",
 
-            reportLabel:
-                "अधिकृत माध्यमे",
+            statisticsTitle:
+                "निर्भयसेतूचा वापर",
 
-            reportTitle:
-                "योग्य ठिकाणी तक्रार करा.",
+            statisticsDescription:
+                "वेबसाइटचा वापर आणि परिस्थिती मार्गदर्शक किती वेळा उघडले गेले याची माहिती.",
 
-            reportDescription:
-                "तक्रार आणि मदतीसाठी अधिकृत सेवांचा वापर करा.",
+            totalVisitors:
+                "एकूण भेटी",
 
-            ncrpText:
-                "लागू असलेल्या सायबर गुन्ह्याची ऑनलाइन तक्रार करा.",
+            recordedVisitors:
+                "नोंद झालेल्या वेबसाइट भेटी",
 
-            helplineText:
-                "सायबर आर्थिक फसवणुकीसाठी त्वरित तक्रार.",
+            totalViews:
+                "एकूण विभाग पाहणी",
 
-            sancharText:
-                "दूरसंचार आणि मोबाईलशी संबंधित सेवा.",
+            guideOpened:
+                "परिस्थिती मार्गदर्शक उघडले",
 
-            emergencyText:
-                "तातडीच्या आपत्कालीन मदतीसाठी.",
+            mostViewed:
+                "सर्वाधिक पाहिलेला विभाग",
+
+            viewSectionViews:
+                "विभागांची पाहणी पहा",
+
+            hideSectionViews:
+                "विभागांची पाहणी लपवा",
+
+            sectionViews:
+                "विभागांची पाहणी",
+
+            views:
+                "पाहणी",
+
+            reportingLabel:
+                "अधिकृत तक्रार नोंदणी",
+
+            reportingTitle:
+                "अधिकृत माध्यमातून तक्रार करा",
+
+            reportingDescription:
+                "तक्रार आणि आपत्कालीन मदतीसाठी अधिकृत सरकारी माध्यमांचा वापर करा.",
+
+            cyberCrimePortal:
+                "सायबर क्राईम पोर्टल",
+
+            cyberCrimePortalDesc:
+                "राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलद्वारे ऑनलाइन सायबर गुन्ह्याची तक्रार करा.",
+
+            openPortal:
+                "पोर्टल उघडा →",
+
+            helplineDescription:
+                "सायबर आर्थिक फसवणुकीसाठी राष्ट्रीय हेल्पलाइन.",
+
+            callNow:
+                "आत्ताच कॉल करा →",
+
+            sancharDescription:
+                "मोबाईल कनेक्शन आणि हरवलेल्या किंवा चोरीला गेलेल्या मोबाईलसाठी सेवा.",
+
+            openWebsite:
+                "वेबसाइट उघडा →",
+
+            emergencyDescription:
+                "तात्काळ धोका असल्यास आपत्कालीन मदतीसाठी.",
+
+            callEmergency:
+                "आपत्कालीन क्रमांकावर कॉल करा →",
 
             aboutLabel:
-                "NIRBHAYSETU बद्दल",
+                "आमच्याबद्दल",
 
             aboutTitle:
-                "गोंधळापासून योग्य कृतीपर्यंत.",
+                "निर्भयसेतू का?",
 
             aboutText:
-                "तांत्रिक माहिती किंवा तक्रार कुठून सुरू करावी याची माहिती नसलेल्या लोकांसाठी NirbhaySetu सायबर गुन्ह्याची तक्रार करणे सोपे बनवते.",
+                "निर्भयसेतू हा आमच्या गटाने महाविद्यालयीन फील्ड प्रोजेक्टचा भाग म्हणून विकसित केलेला सायबर सुरक्षा जागरूकता आणि सायबर गुन्हे तक्रार मार्गदर्शक आहे. सामान्य सायबर गुन्ह्यांच्या परिस्थितीत इंग्रजी, मराठी आणि हिंदी भाषेत सोपे व व्यावहारिक मार्गदर्शन देऊन सायबर गुन्ह्याची तक्रार करणे अधिक सोपे करणे हा या प्रकल्पाचा उद्देश आहे. एच. व्ही. देसाई महाविद्यालयाने फील्ड रिसर्च करण्याची, सायबर सेलशी संवाद साधण्याची आणि समाजातील जागरूकतेसाठी व्यावहारिक उपाय विकसित करण्याची संधी दिल्यामुळे हा प्रकल्प शक्य झाला.",
 
-            aboutPoint1:
-                "सोप्या भाषेचा वापर",
+            disclaimerTitle:
+                "महत्त्वाचे:",
 
-            aboutPoint2:
-                "इंग्रजी • मराठी • हिंदी",
+            disclaimerText:
+                "निर्भयसेतू सामान्य जनजागृती आणि मार्गदर्शन देतो. प्रत्यक्ष घटना घडल्यास अधिकृत तक्रार माध्यमांचा वापर करा आणि संबंधित अधिकाऱ्यांच्या सूचनांचे पालन करा.",
 
-            aboutPoint3:
-                "स्पष्टीकरणापूर्वी कृती",
+            helpModalTitle:
+                "तात्काळ मदत हवी आहे?",
 
-            disclaimer:
-                "NirbhaySetu हा जनजागृती आणि मार्गदर्शन प्रकल्प आहे. तो पोलीस, कायदेशीर किंवा व्यावसायिक सल्ल्याचा पर्याय नाही.",
+            helpModalText:
+                "सायबर आर्थिक फसवणुकीमुळे तुमचे पैसे गमावले असल्यास त्वरित 1930 वर कॉल करा आणि अधिकृत सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार करा.",
 
-            modalTitle:
-                "आत्ताच मदत हवी आहे?",
+            call1930:
+                "1930 वर कॉल करा",
 
-            modalText:
-                "तुमच्या परिस्थितीनुसार योग्य पर्याय निवडा.",
+            reportOnline:
+                "ऑनलाइन तक्रार करा",
 
-            modal1930:
-                "सायबर आर्थिक फसवणूक",
-
-            modal1930Text:
-                "पैसे गेले असल्यास त्वरित कॉल करा.",
-
-            modalNcrp:
-                "सायबर गुन्ह्याची तक्रार",
-
-            modalNcrpText:
-                "राष्ट्रीय सायबर गुन्हे रिपोर्टिंग पोर्टल.",
-
-            modal112:
-                "आपत्कालीन मदत",
-
-            modal112Text:
-                "तातडीच्या आपत्कालीन मदतीसाठी.",
-
-            footerTagline:
-                "सुरक्षित डिजिटल जगाकडे जाणारा पूल."
-
-        },
-
-
-        hi: {
-
-            brandTagline:
-                "साइबर सुरक्षा गाइड",
-
-            navHome:
-                "होम",
-
-            navHelp:
-                "मदद लें",
-
-            navReport:
-                "रिपोर्ट करें",
-
-            navAbout:
-                "हमारे बारे में",
-
-            eyebrow:
-                "सरल • व्यावहारिक • स्थानीय",
-
-            heroTitle:
-                "साइबर अपराध हुआ है। <span>अब क्या करें?</span>",
-
-            heroDescription:
-                "NirbhaySetu आपको समझने, तुरंत सही कदम उठाने और सही रिपोर्टिंग चैनल खोजने में मदद करता है।",
-
-            findSituation:
-                "मेरी स्थिति खोजें",
-
-            helpNow:
-                "मुझे अभी मदद चाहिए",
-
-            financialAlertTitle:
-                "साइबर धोखाधड़ी में पैसे चले गए?",
-
-            financialAlertText:
-                "तुरंत 1930 पर कॉल करें।",
-
-            guideLabel:
-                "निर्देशित कार्रवाई",
-
-            visualTitle:
-                "एक समस्या।<br>अगले स्पष्ट कदम।",
-
-            stepOne:
-                "समझें",
-
-            stepTwo:
-                "सुरक्षित करें",
-
-            stepThree:
-                "रिपोर्ट करें",
-
-            situationLabel:
-                "यहाँ से शुरू करें",
-
-            situationTitle:
-                "आपके साथ क्या हुआ?",
-
-            situationDescription:
-                "अपनी स्थिति के सबसे करीब वाला विकल्प चुनें।",
-
-            cardMoneyTitle:
-                "पैसे चले गए",
-
-            cardMoneyText:
-                "UPI, बैंक या पेमेंट धोखाधड़ी",
-
-            cardOtpTitle:
-                "फर्जी कॉल / OTP",
-
-            cardOtpText:
-                "किसी ने OTP या बैंकिंग जानकारी मांगी",
-
-            cardLinkTitle:
-                "संदिग्ध लिंक",
-
-            cardLinkText:
-                "फिशिंग संदेश या नकली वेबसाइट",
-
-            cardSocialTitle:
-                "सोशल मीडिया अकाउंट हैक",
-
-            cardSocialText:
-                "अकाउंट किसी और ने अपने नियंत्रण में लिया",
-
-            cardHarassmentTitle:
-                "ऑनलाइन उत्पीड़न",
-
-            cardHarassmentText:
-                "धमकी, पीछा करना या परेशान करने वाले संदेश",
-
-            cardIdentityTitle:
-                "फर्जी प्रोफाइल",
-
-            cardIdentityText:
-                "कोई आपकी पहचान का उपयोग कर रहा है",
-
-            cardShoppingTitle:
-                "ऑनलाइन शॉपिंग धोखाधड़ी",
-
-            cardShoppingText:
-                "फर्जी विक्रेता, सामान या भुगतान",
-
-            cardJobTitle:
-                "फर्जी नौकरी घोटाला",
-
-            cardJobText:
-                "फर्जी नौकरी या काम का प्रस्ताव",
-
-            cardPhoneTitle:
-                "मोबाइल खो गया / चोरी हुआ",
-
-            cardPhoneText:
-                "मोबाइल खोजें, लॉक करें और सुरक्षित करें",
-
-            viewGuide:
-                "गाइड देखें",
-
-            reportLabel:
-                "आधिकारिक माध्यम",
-
-            reportTitle:
-                "सही जगह पर रिपोर्ट करें।",
-
-            reportDescription:
-                "रिपोर्टिंग और सहायता के लिए आधिकारिक सेवाओं का उपयोग करें।",
-
-            ncrpText:
-                "लागू साइबर अपराध की ऑनलाइन शिकायत करें।",
-
-            helplineText:
-                "साइबर वित्तीय धोखाधड़ी की तुरंत रिपोर्टिंग।",
-
-            sancharText:
-                "टेलीकॉम और मोबाइल से संबंधित सेवाएं।",
-
-            emergencyText:
-                "तुरंत आपातकालीन सहायता के लिए।",
-
-            aboutLabel:
-                "NIRBHAYSETU के बारे में",
-
-            aboutTitle:
-                "उलझन से सही कार्रवाई तक।",
-
-            aboutText:
-                "जिन लोगों को तकनीकी शब्द या शिकायत कहाँ से शुरू करनी है, इसकी जानकारी नहीं है, उनके लिए NirbhaySetu साइबर अपराध रिपोर्टिंग को आसान बनाने के लिए बनाया गया है।",
-
-            aboutPoint1:
-                "सरल भाषा",
-
-            aboutPoint2:
-                "अंग्रेज़ी • मराठी • हिंदी",
-
-            aboutPoint3:
-                "जानकारी से पहले कार्रवाई",
-
-            disclaimer:
-                "NirbhaySetu जागरूकता और मार्गदर्शन परियोजना है। यह पुलिस, कानूनी या पेशेवर सलाह का विकल्प नहीं है।",
-
-            modalTitle:
-                "अभी मदद चाहिए?",
-
-            modalText:
-                "अपनी स्थिति के अनुसार सही विकल्प चुनें।",
-
-            modal1930:
-                "साइबर वित्तीय धोखाधड़ी",
-
-            modal1930Text:
-                "पैसे चले गए हों तो तुरंत कॉल करें।",
-
-            modalNcrp:
-                "साइबर अपराध रिपोर्ट करें",
-
-            modalNcrpText:
-                "राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल।",
-
-            modal112:
-                "आपातकाल",
-
-            modal112Text:
-                "तुरंत आपातकालीन सहायता के लिए।",
-
-            footerTagline:
-                "एक सुरक्षित डिजिटल दुनिया की ओर पुल।"
-
-        }
-
-    };
-
-
-    /* =====================================================
-       GUIDE TRANSLATIONS
-       ===================================================== */
-
-    const guideTranslations = {
-
-        en: {
-
-            money: {
-                title: "Money Lost / Financial Fraud",
-                subtitle: "Act quickly. Your first priority is to stop or limit further loss.",
-                important: "If money has been lost through cyber financial fraud, call 1930 immediately.",
-                sections: [
-                    ["1. Stop further loss", [
-                        "Do not send any more money.",
-                        "Do not share OTP, UPI PIN, CVV, password or banking credentials.",
-                        "If remote access was given, disconnect the session and secure your accounts."
-                    ]],
-                    ["2. Contact your bank / payment provider", [
-                        "Report the unauthorized transaction immediately.",
-                        "Ask about available blocking or dispute procedures.",
-                        "Keep the transaction reference number."
-                    ]],
-                    ["3. Call 1930", [
-                        "Call the national cyber financial fraud helpline.",
-                        "Keep your transaction details ready.",
-                        "Report the incident as soon as possible."
-                    ]],
-                    ["4. Report online", [
-                        "Submit the complaint through the National Cyber Crime Reporting Portal.",
-                        "Save your acknowledgement / complaint details."
-                    ]],
-                    ["5. Keep this evidence", [
-                        "Transaction ID / UTR",
-                        "Bank or wallet details",
-                        "Screenshots",
-                        "UPI ID / phone number",
-                        "Messages, emails or chats",
-                        "Website or profile URL"
-                    ]]
-                ]
-            },
-
-            otp: {
-                title: "Fake Call / OTP Scam",
-                subtitle: "Someone called, messaged or contacted you asking for OTP, PIN or personal information.",
-                important: "Never share OTP, UPI PIN, CVV, password or banking credentials with a caller.",
-                sections: [
-                    ["1. End the conversation", [
-                        "Do not share the OTP or verification code.",
-                        "Do not share your UPI PIN, CVV or password.",
-                        "Do not install an app or give remote access because someone asked you to."
-                    ]],
-                    ["2. Check your accounts", [
-                        "Check bank and UPI transactions.",
-                        "Check whether your account, email or social-media password was changed.",
-                        "If you shared credentials, change them immediately."
-                    ]],
-                    ["3. If money was lost", [
-                        "Contact your bank/payment provider immediately.",
-                        "Call 1930.",
-                        "Report the incident on the National Cyber Crime Reporting Portal."
-                    ]],
-                    ["4. Keep evidence", [
-                        "Caller phone number",
-                        "SMS / WhatsApp messages",
-                        "Screenshots",
-                        "Transaction details",
-                        "Emails or links received"
-                    ]]
-                ]
-            },
-
-            suspicious: {
-                title: "Suspicious Link / Phishing",
-                subtitle: "You received or opened a suspicious website, message or login link.",
-                important: "Do not enter passwords, OTPs, card details or other sensitive information into suspicious websites.",
-                sections: [
-                    ["1. If you have NOT clicked", [
-                        "Do not open the link.",
-                        "Do not download anything.",
-                        "Delete or report the suspicious message."
-                    ]],
-                    ["2. If you clicked the link", [
-                        "Close the suspicious page.",
-                        "Do not enter additional information.",
-                        "Do not download unknown applications or files."
-                    ]],
-                    ["3. If you entered your password", [
-                        "Change the password immediately.",
-                        "Use a strong, unique password.",
-                        "Enable two-factor authentication.",
-                        "Sign out suspicious sessions where available."
-                    ]],
-                    ["4. If banking information was exposed", [
-                        "Contact your bank/payment provider immediately.",
-                        "Monitor transactions.",
-                        "If money was lost, call 1930."
-                    ]],
-                    ["5. Keep evidence", [
-                        "Suspicious URL",
-                        "Message screenshot",
-                        "Sender details",
-                        "Email address / phone number",
-                        "Downloaded file name, if applicable"
-                    ]]
-                ]
-            },
-
-            social: {
-                title: "Social Media Account Hacked",
-                subtitle: "Someone has accessed, taken over or changed your social-media account.",
-                important: "Secure the account first and warn your contacts if the attacker is sending messages from your account.",
-                sections: [
-                    ["1. Try account recovery", [
-                        "Use the platform's official account-recovery option.",
-                        "Do not use unofficial recovery services."
-                    ]],
-                    ["2. Change your password", [
-                        "Create a new strong password.",
-                        "Do not reuse the compromised password elsewhere."
-                    ]],
-                    ["3. Secure the account", [
-                        "Enable two-factor authentication.",
-                        "Check active login sessions.",
-                        "Remove unknown devices.",
-                        "Check recovery email and phone number.",
-                        "Remove suspicious third-party apps."
-                    ]],
-                    ["4. Protect your contacts", [
-                        "Tell friends and family that your account was compromised.",
-                        "Ask them not to send money or trust suspicious messages from your account."
-                    ]],
-                    ["5. Keep evidence", [
-                        "Profile URL",
-                        "Screenshots",
-                        "Suspicious messages",
-                        "Login alerts",
-                        "Recovery emails"
-                    ]]
-                ]
-            },
-
-            harassment: {
-                title: "Cyber Harassment / Stalking",
-                subtitle: "You are receiving unwanted, threatening or repeated online communication.",
-                important: "Preserve evidence before deleting messages whenever it is safe to do so.",
-                sections: [
-                    ["1. Preserve evidence", [
-                        "Take screenshots.",
-                        "Save usernames and profile links.",
-                        "Keep messages, emails and relevant dates."
-                    ]],
-                    ["2. Protect yourself", [
-                        "Block or restrict the account when appropriate.",
-                        "Review privacy settings.",
-                        "Limit who can contact or tag you."
-                    ]],
-                    ["3. Report the account", [
-                        "Use the platform's official reporting option.",
-                        "Keep the report confirmation if available."
-                    ]],
-                    ["4. Serious or immediate threat", [
-                        "If you face immediate danger or a physical threat, contact emergency services.",
-                        "For cybercrime reporting, use the appropriate police/cybercrime channel."
-                    ]],
-                    ["5. Keep evidence", [
-                        "Screenshots",
-                        "Profile URLs",
-                        "Usernames",
-                        "Phone numbers",
-                        "Messages / emails",
-                        "Dates and times"
-                    ]]
-                ]
-            },
-
-            identity: {
-                title: "Fake Profile / Impersonation",
-                subtitle: "Someone is pretending to be you or another person online.",
-                important: "Save the fake profile information before it disappears.",
-                sections: [
-                    ["1. Capture the profile", [
-                        "Take screenshots.",
-                        "Copy the profile URL.",
-                        "Save the username and account details."
-                    ]],
-                    ["2. Report the profile", [
-                        "Use the platform's impersonation or fake-account reporting option.",
-                        "Tell people you know if the account is pretending to be you."
-                    ]],
-                    ["3. Protect your real account", [
-                        "Change your password if you suspect compromise.",
-                        "Enable two-factor authentication.",
-                        "Review active sessions and recovery information."
-                    ]],
-                    ["4. Keep evidence", [
-                        "Profile URL",
-                        "Username",
-                        "Screenshots",
-                        "Messages",
-                        "Emails or phone numbers"
-                    ]],
-                    ["5. Report cybercrime when appropriate", [
-                        "Use the National Cyber Crime Reporting Portal for applicable complaints."
-                    ]]
-                ]
-            },
-
-            shopping: {
-                title: "Online Shopping Fraud",
-                subtitle: "A product, seller, website or payment transaction appears fraudulent.",
-                important: "If money has been lost through cyber fraud, call 1930 as soon as possible.",
-                sections: [
-                    ["1. Stop further payment", [
-                        "Do not send additional money for refunds, delivery fees or verification.",
-                        "Do not share OTP, PIN or banking credentials."
-                    ]],
-                    ["2. Contact the platform", [
-                        "Use the official customer-support or dispute option.",
-                        "Report the seller/listing if it is fraudulent.",
-                        "Keep the complaint/reference number."
-                    ]],
-                    ["3. Contact your bank/payment provider", [
-                        "Report the transaction if payment was unauthorized or fraudulent.",
-                        "Ask about available dispute procedures."
-                    ]],
-                    ["4. If money was lost", [
-                        "Call 1930 immediately.",
-                        "Submit a cybercrime complaint through the National Cyber Crime Reporting Portal."
-                    ]],
-                    ["5. Keep shopping evidence", [
-                        "Order ID",
-                        "Transaction ID / UTR",
-                        "Seller name",
-                        "Seller profile",
-                        "Website/app URL",
-                        "Product listing",
-                        "Chats and emails",
-                        "Screenshots",
-                        "Delivery/refund messages"
-                    ]]
-                ]
-            },
-
-            job: {
-                title: "Fake Job / Work Scam",
-                subtitle: "A job offer asks for money, sensitive information or unusual payments.",
-                important: "Do not pay money just because someone promises a job, interview or guaranteed employment.",
-                sections: [
-                    ["1. Stop the payment", [
-                        "Do not make another payment.",
-                        "Do not share OTP, PIN, password or unnecessary information."
-                    ]],
-                    ["2. Verify the offer", [
-                        "Check the employer through its official website.",
-                        "Do not rely only on a recruiter profile, WhatsApp message or forwarded advertisement."
-                    ]],
-                    ["3. Contact your bank/payment provider", [
-                        "If you transferred money, report the transaction immediately."
-                    ]],
-                    ["4. Call 1930 if money was lost", [
-                        "Report financial cyber fraud as soon as possible.",
-                        "Then submit the complaint through the National Cyber Crime Reporting Portal."
-                    ]],
-                    ["5. Keep evidence", [
-                        "Job advertisement",
-                        "Recruiter profile",
-                        "Phone number",
-                        "Email address",
-                        "Payment details",
-                        "Chats",
-                        "Website URL",
-                        "Screenshots"
-                    ]]
-                ]
-            },
-
-            phone: {
-                title: "Lost / Stolen Mobile",
-                subtitle: "Find, lock and secure your phone, accounts and mobile number.",
-                important: "Act quickly. A lost phone may contain personal, banking and account information.",
-                sections: [
-                    ["1. 🔎 Try to find your phone", [
-                        "Android → use Google Find Hub / Find My Device.",
-                        "iPhone → use Apple Find My.",
-                        "Try Locate, Play Sound or Mark as Lost when available.",
-                        "If the map shows an unfamiliar location, do not confront anyone yourself."
-                    ]],
-                    ["2. 🔒 Lock the phone", [
-                        "Use the official Find Hub or Find My service.",
-                        "Mark the device as lost where available.",
-                        "Add a contact message if appropriate."
-                    ]],
-                    ["3. 📞 Secure your SIM", [
-                        "Contact your mobile operator.",
-                        "Request blocking/replacement of the SIM.",
-                        "Keep your mobile number secure."
-                    ]],
-                    ["4. 🔐 Secure important accounts", [
-                        "Change passwords for important accounts.",
-                        "Sign out the lost device where possible.",
-                        "Secure banking, email and social-media accounts.",
-                        "Monitor your bank and UPI transactions."
-                    ]],
-                    ["5. 👮 Report the loss", [
-                        "File a police complaint/report for the lost or stolen phone.",
-                        "Keep the complaint details safely."
-                    ]],
-                    ["6. 📵 Block the IMEI using CEIR", [
-                        "Use the official CEIR / Sanchar Saathi service.",
-                        "Keep your IMEI number ready if available.",
-                        "Keep the required police report and identity documents.",
-                        "Save the CEIR Request ID after submitting the request."
-                    ]],
-                    ["7. 💳 If money was stolen", [
-                        "Contact your bank/payment provider immediately.",
-                        "Call 1930.",
-                        "Report the cybercrime through the National Cyber Crime Reporting Portal."
-                    ]]
-                ]
-            }
-
-        },
-
-
-        /* =================================================
-           MARATHI
-           ================================================= */
-
-        mr: {
-
-            money: {
-                title: "पैसे गेले / आर्थिक सायबर फसवणूक",
-                subtitle: "त्वरित कृती करा. पुढील नुकसान थांबवणे किंवा कमी करणे हे पहिले उद्दिष्ट आहे.",
-                important: "सायबर आर्थिक फसवणुकीत पैसे गेले असल्यास तात्काळ 1930 वर कॉल करा.",
-                sections: [
-                    ["1. पुढील नुकसान थांबवा", [
-                        "आणखी पैसे पाठवू नका.",
-                        "OTP, UPI PIN, CVV, पासवर्ड किंवा बँकिंग माहिती शेअर करू नका.",
-                        "रिमोट ॲक्सेस दिला असल्यास तो बंद करा आणि खाती सुरक्षित करा."
-                    ]],
-                    ["2. बँक / पेमेंट सेवा प्रदात्याशी संपर्क करा", [
-                        "अनधिकृत व्यवहाराची त्वरित माहिती द्या.",
-                        "व्यवहार थांबवणे किंवा तक्रार करण्याची उपलब्ध प्रक्रिया विचारा.",
-                        "व्यवहार क्रमांक जतन करा."
-                    ]],
-                    ["3. 1930 वर कॉल करा", [
-                        "राष्ट्रीय सायबर आर्थिक फसवणूक हेल्पलाइनवर कॉल करा.",
-                        "व्यवहाराची माहिती तयार ठेवा.",
-                        "घटना शक्य तितक्या लवकर रिपोर्ट करा."
-                    ]],
-                    ["4. ऑनलाइन तक्रार करा", [
-                        "National Cyber Crime Reporting Portal वर तक्रार करा.",
-                        "तक्रार / acknowledgement माहिती जतन करा."
-                    ]],
-                    ["5. हे पुरावे जतन करा", [
-                        "Transaction ID / UTR",
-                        "बँक किंवा वॉलेट माहिती",
-                        "स्क्रीनशॉट",
-                        "UPI ID / फोन नंबर",
-                        "संदेश, ईमेल किंवा चॅट",
-                        "वेबसाइट किंवा प्रोफाइल लिंक"
-                    ]]
-                ]
-            },
-
-            otp: {
-                title: "बनावट कॉल / OTP फसवणूक",
-                subtitle: "कोणीतरी OTP, PIN किंवा वैयक्तिक माहिती मागितली आहे.",
-                important: "कॉल करणाऱ्या व्यक्तीला OTP, UPI PIN, CVV, पासवर्ड किंवा बँकिंग माहिती देऊ नका.",
-                sections: [
-                    ["1. संभाषण थांबवा", [
-                        "OTP किंवा verification code देऊ नका.",
-                        "UPI PIN, CVV किंवा पासवर्ड देऊ नका.",
-                        "कोणी सांगितले म्हणून ॲप इंस्टॉल किंवा रिमोट ॲक्सेस देऊ नका."
-                    ]],
-                    ["2. तुमची खाती तपासा", [
-                        "बँक आणि UPI व्यवहार तपासा.",
-                        "खाते, ईमेल किंवा सोशल मीडिया पासवर्ड बदलला आहे का ते तपासा.",
-                        "माहिती शेअर केली असल्यास पासवर्ड त्वरित बदला."
-                    ]],
-                    ["3. पैसे गेले असल्यास", [
-                        "बँक / पेमेंट सेवा प्रदात्याशी त्वरित संपर्क करा.",
-                        "1930 वर कॉल करा.",
-                        "National Cyber Crime Reporting Portal वर तक्रार करा."
-                    ]],
-                    ["4. पुरावे जतन करा", [
-                        "कॉल करणाऱ्याचा फोन नंबर",
-                        "SMS / WhatsApp संदेश",
-                        "स्क्रीनशॉट",
-                        "व्यवहार माहिती",
-                        "ईमेल किंवा मिळालेल्या लिंक"
-                    ]]
-                ]
-            },
-
-            suspicious: {
-                title: "संशयास्पद लिंक / फिशिंग",
-                subtitle: "तुम्हाला संशयास्पद वेबसाइट, संदेश किंवा लॉगिन लिंक मिळाली किंवा तुम्ही ती उघडली.",
-                important: "संशयास्पद वेबसाइटवर पासवर्ड, OTP, कार्ड माहिती किंवा इतर संवेदनशील माहिती टाकू नका.",
-                sections: [
-                    ["1. लिंक उघडली नसेल तर", [
-                        "लिंक उघडू नका.",
-                        "काहीही डाउनलोड करू नका.",
-                        "संशयास्पद संदेश डिलीट किंवा रिपोर्ट करा."
-                    ]],
-                    ["2. लिंक उघडली असल्यास", [
-                        "संशयास्पद पेज बंद करा.",
-                        "आणखी माहिती टाकू नका.",
-                        "अनोळखी ॲप किंवा फाइल डाउनलोड करू नका."
-                    ]],
-                    ["3. पासवर्ड टाकला असल्यास", [
-                        "पासवर्ड त्वरित बदला.",
-                        "मजबूत आणि वेगळा पासवर्ड वापरा.",
-                        "Two-factor authentication सुरू करा.",
-                        "उपलब्ध असल्यास संशयास्पद sessions मधून sign out करा."
-                    ]],
-                    ["4. बँकिंग माहिती दिली असल्यास", [
-                        "बँक / पेमेंट सेवा प्रदात्याशी त्वरित संपर्क करा.",
-                        "व्यवहार तपासा.",
-                        "पैसे गेले असल्यास 1930 वर कॉल करा."
-                    ]],
-                    ["5. पुरावे जतन करा", [
-                        "संशयास्पद URL",
-                        "संदेशाचा स्क्रीनशॉट",
-                        "पाठवणाऱ्याची माहिती",
-                        "ईमेल / फोन नंबर",
-                        "डाउनलोड झालेल्या फाइलचे नाव"
-                    ]]
-                ]
-            },
-
-            social: {
-                title: "सोशल मीडिया खाते हॅक झाले",
-                subtitle: "कोणीतरी तुमच्या सोशल मीडिया खात्यात प्रवेश केला किंवा ते ताब्यात घेतले.",
-                important: "प्रथम खाते सुरक्षित करा आणि हॅकर तुमच्या नावाने संदेश पाठवत असल्यास संपर्कांना सावध करा.",
-                sections: [
-                    ["1. खाते परत मिळवण्याचा प्रयत्न करा", [
-                        "प्लॅटफॉर्मची अधिकृत account recovery प्रक्रिया वापरा.",
-                        "अधिकृत नसलेल्या recovery सेवांचा वापर करू नका."
-                    ]],
-                    ["2. पासवर्ड बदला", [
-                        "नवीन मजबूत पासवर्ड तयार करा.",
-                        "हॅक झालेला पासवर्ड इतरत्र वापरू नका."
-                    ]],
-                    ["3. खाते सुरक्षित करा", [
-                        "Two-factor authentication सुरू करा.",
-                        "Active login sessions तपासा.",
-                        "अनोळखी devices काढा.",
-                        "Recovery email आणि phone number तपासा.",
-                        "संशयास्पद third-party apps काढा."
-                    ]],
-                    ["4. संपर्कांना सावध करा", [
-                        "तुमचे खाते हॅक झाल्याचे मित्र आणि कुटुंबाला सांगा.",
-                        "तुमच्या खात्यावरून आलेल्या संशयास्पद संदेशांवर विश्वास ठेवू नका असे सांगा."
-                    ]],
-                    ["5. पुरावे जतन करा", [
-                        "Profile URL",
-                        "स्क्रीनशॉट",
-                        "संशयास्पद संदेश",
-                        "Login alerts",
-                        "Recovery emails"
-                    ]]
-                ]
-            },
-
-            harassment: {
-                title: "सायबर छळ / ऑनलाइन पाठलाग",
-                subtitle: "तुम्हाला त्रासदायक, धमकीचे किंवा वारंवार ऑनलाइन संदेश मिळत आहेत.",
-                important: "सुरक्षित असल्यास संदेश डिलीट करण्यापूर्वी पुरावे जतन करा.",
-                sections: [
-                    ["1. पुरावे जतन करा", [
-                        "स्क्रीनशॉट घ्या.",
-                        "Username आणि profile links जतन करा.",
-                        "संदेश, ईमेल आणि संबंधित तारीख जतन करा."
-                    ]],
-                    ["2. स्वतःचे संरक्षण करा", [
-                        "गरजेनुसार खाते block किंवा restrict करा.",
-                        "Privacy settings तपासा.",
-                        "कोण तुम्हाला contact किंवा tag करू शकते ते मर्यादित करा."
-                    ]],
-                    ["3. खात्याची तक्रार करा", [
-                        "प्लॅटफॉर्मचा अधिकृत reporting option वापरा.",
-                        "Report confirmation असल्यास जतन करा."
-                    ]],
-                    ["4. गंभीर किंवा तातडीची धमकी", [
-                        "तातडीचा धोका किंवा शारीरिक धमकी असल्यास emergency services शी संपर्क करा.",
-                        "सायबर गुन्ह्यासाठी योग्य पोलीस / सायबरक्राइम माध्यम वापरा."
-                    ]],
-                    ["5. पुरावे जतन करा", [
-                        "स्क्रीनशॉट",
-                        "Profile URLs",
-                        "Usernames",
-                        "फोन नंबर",
-                        "Messages / emails",
-                        "तारीख आणि वेळ"
-                    ]]
-                ]
-            },
-
-            identity: {
-                title: "बनावट प्रोफाइल / ओळख वापरणे",
-                subtitle: "कोणी तुमची किंवा दुसऱ्या व्यक्तीची ओळख वापरून ऑनलाइन प्रोफाइल तयार केले आहे.",
-                important: "बनावट प्रोफाइल गायब होण्यापूर्वी त्याची माहिती जतन करा.",
-                sections: [
-                    ["1. प्रोफाइल जतन करा", [
-                        "स्क्रीनशॉट घ्या.",
-                        "Profile URL कॉपी करा.",
-                        "Username आणि खाते माहिती जतन करा."
-                    ]],
-                    ["2. प्रोफाइल रिपोर्ट करा", [
-                        "प्लॅटफॉर्मचा impersonation / fake account reporting option वापरा.",
-                        "ते तुमची ओळख वापरत असल्यास परिचितांना कळवा."
-                    ]],
-                    ["3. तुमचे खरे खाते सुरक्षित करा", [
-                        "खाते धोक्यात असल्यास पासवर्ड बदला.",
-                        "Two-factor authentication सुरू करा.",
-                        "Active sessions आणि recovery माहिती तपासा."
-                    ]],
-                    ["4. पुरावे जतन करा", [
-                        "Profile URL",
-                        "Username",
-                        "स्क्रीनशॉट",
-                        "Messages",
-                        "ईमेल किंवा फोन नंबर"
-                    ]],
-                    ["5. आवश्यक असल्यास सायबर तक्रार करा", [
-                        "लागू असल्यास National Cyber Crime Reporting Portal वापरा."
-                    ]]
-                ]
-            },
-
-            shopping: {
-                title: "ऑनलाइन खरेदी फसवणूक",
-                subtitle: "विक्रेता, वेबसाइट, वस्तू किंवा पेमेंट फसवे वाटत आहे.",
-                important: "सायबर फसवणुकीत पैसे गेले असल्यास शक्य तितक्या लवकर 1930 वर कॉल करा.",
-                sections: [
-                    ["1. पुढील पेमेंट थांबवा", [
-                        "Refund, delivery fee किंवा verification साठी आणखी पैसे देऊ नका.",
-                        "OTP, PIN किंवा बँकिंग माहिती देऊ नका."
-                    ]],
-                    ["2. प्लॅटफॉर्मशी संपर्क करा", [
-                        "अधिकृत customer support किंवा dispute option वापरा.",
-                        "फसव्या विक्रेत्याची / listing ची तक्रार करा.",
-                        "Complaint/reference number जतन करा."
-                    ]],
-                    ["3. बँक / पेमेंट सेवा प्रदात्याशी संपर्क करा", [
-                        "अनधिकृत किंवा फसव्या व्यवहाराची माहिती द्या.",
-                        "उपलब्ध dispute प्रक्रिया विचारा."
-                    ]],
-                    ["4. पैसे गेले असल्यास", [
-                        "तात्काळ 1930 वर कॉल करा.",
-                        "National Cyber Crime Reporting Portal वर तक्रार करा."
-                    ]],
-                    ["5. खरेदीचे पुरावे जतन करा", [
-                        "Order ID",
-                        "Transaction ID / UTR",
-                        "Seller name",
-                        "Seller profile",
-                        "Website/app URL",
-                        "Product listing",
-                        "Chats आणि emails",
-                        "Screenshots",
-                        "Delivery/refund messages"
-                    ]]
-                ]
-            },
-
-            job: {
-                title: "बनावट नोकरी / कामाची फसवणूक",
-                subtitle: "नोकरीच्या ऑफरमध्ये पैसे, संवेदनशील माहिती किंवा संशयास्पद पेमेंट मागितले जात आहे.",
-                important: "नोकरी, मुलाखत किंवा हमीदार रोजगाराचे आश्वासन देऊन कोणी पैसे मागितले म्हणून पैसे देऊ नका.",
-                sections: [
-                    ["1. पेमेंट थांबवा", [
-                        "आणखी पैसे देऊ नका.",
-                        "OTP, PIN, पासवर्ड किंवा अनावश्यक माहिती देऊ नका."
-                    ]],
-                    ["2. ऑफर तपासा", [
-                        "कंपनीची अधिकृत वेबसाइट तपासा.",
-                        "फक्त recruiter profile, WhatsApp message किंवा forwarded advertisement वर विश्वास ठेवू नका."
-                    ]],
-                    ["3. बँक / पेमेंट सेवा प्रदात्याशी संपर्क करा", [
-                        "पैसे ट्रान्सफर केले असल्यास व्यवहाराची त्वरित माहिती द्या."
-                    ]],
-                    ["4. पैसे गेले असल्यास 1930 वर कॉल करा", [
-                        "सायबर आर्थिक फसवणूक त्वरित रिपोर्ट करा.",
-                        "त्यानंतर National Cyber Crime Reporting Portal वर तक्रार करा."
-                    ]],
-                    ["5. पुरावे जतन करा", [
-                        "Job advertisement",
-                        "Recruiter profile",
-                        "Phone number",
-                        "Email address",
-                        "Payment details",
-                        "Chats",
-                        "Website URL",
-                        "Screenshots"
-                    ]]
-                ]
-            },
-
-            phone: {
-                title: "मोबाईल हरवला / चोरीला गेला",
-                subtitle: "मोबाईल शोधा, लॉक करा आणि फोन, खाती व मोबाईल नंबर सुरक्षित करा.",
-                important: "त्वरित कृती करा. हरवलेल्या मोबाईलमध्ये वैयक्तिक, बँकिंग आणि खात्यांची माहिती असू शकते.",
-                sections: [
-                    ["1. 🔎 मोबाईल शोधण्याचा प्रयत्न करा", [
-                        "Android → Google Find Hub / Find My Device वापरा.",
-                        "iPhone → Apple Find My वापरा.",
-                        "उपलब्ध असल्यास Locate, Play Sound किंवा Mark as Lost वापरा.",
-                        "नकाशावर अनोळखी ठिकाण दिसल्यास स्वतः तिथे जाऊन सामना करू नका."
-                    ]],
-                    ["2. 🔒 मोबाईल लॉक करा", [
-                        "अधिकृत Find Hub किंवा Find My सेवा वापरा.",
-                        "उपलब्ध असल्यास device ला Lost म्हणून mark करा.",
-                        "योग्य असल्यास contact message जोडा."
-                    ]],
-                    ["3. 📞 SIM सुरक्षित करा", [
-                        "मोबाईल ऑपरेटरशी संपर्क करा.",
-                        "SIM block / replacement मागा.",
-                        "तुमचा मोबाईल नंबर सुरक्षित ठेवा."
-                    ]],
-                    ["4. 🔐 महत्त्वाची खाती सुरक्षित करा", [
-                        "महत्त्वाच्या खात्यांचे पासवर्ड बदला.",
-                        "शक्य असल्यास हरवलेल्या device मधून sign out करा.",
-                        "बँकिंग, ईमेल आणि सोशल मीडिया खाती सुरक्षित करा.",
-                        "बँक आणि UPI व्यवहार तपासा."
-                    ]],
-                    ["5. 👮 मोबाईल हरवल्याची तक्रार करा", [
-                        "हरवलेल्या किंवा चोरी झालेल्या मोबाईलची पोलीस तक्रार करा.",
-                        "तक्रारीची माहिती सुरक्षित ठेवा."
-                    ]],
-                    ["6. 📵 CEIR द्वारे IMEI ब्लॉक करा", [
-                        "अधिकृत CEIR / Sanchar Saathi सेवा वापरा.",
-                        "उपलब्ध असल्यास IMEI नंबर तयार ठेवा.",
-                        "आवश्यक पोलीस तक्रार आणि ओळख कागदपत्रे तयार ठेवा.",
-                        "Request ID जतन करा."
-                    ]],
-                    ["7. 💳 पैसे चोरीला गेले असल्यास", [
-                        "बँक / पेमेंट सेवा प्रदात्याशी त्वरित संपर्क करा.",
-                        "1930 वर कॉल करा.",
-                        "National Cyber Crime Reporting Portal वर तक्रार करा."
-                    ]]
-                ]
-            }
-
+            footerText:
+                "सायबर सुरक्षा आणि तक्रार मार्गदर्शक"
         },
 
 
@@ -1287,318 +471,1237 @@ document.addEventListener("DOMContentLoaded", () => {
 
         hi: {
 
-            money: {
-                title: "पैसे चले गए / साइबर वित्तीय धोखाधड़ी",
-                subtitle: "जल्दी कार्रवाई करें। सबसे पहले आगे होने वाले नुकसान को रोकें या कम करें।",
-                important: "अगर साइबर वित्तीय धोखाधड़ी में पैसे चले गए हैं, तो तुरंत 1930 पर कॉल करें.",
+            lastUpdateLabel:
+                "अंतिम अपडेट:",
+
+            visitorCountLabel:
+                "आगंतुक संख्या:",
+
+            brandSubtitle:
+                "साइबर सुरक्षा मार्गदर्शिका",
+
+            navHome:
+                "होम",
+
+            navHelp:
+                "मदद प्राप्त करें",
+
+            navReport:
+                "रिपोर्ट करें",
+
+            navStatistics:
+                "आंकड़े",
+
+            navAbout:
+                "हमारे बारे में",
+
+            heroEyebrow:
+                "साइबर सुरक्षा • सरल • उपयोगी",
+
+            heroTitle:
+                "क्या हुआ हमें बताएं। आगे क्या करना है, निर्भयसेतु बताएगा।",
+
+            heroDescription:
+                "सामान्य साइबर अपराध की स्थिति को समझने, खुद को सुरक्षित रखने और आधिकारिक माध्यमों से शिकायत करने के लिए सरल मार्गदर्शन।",
+
+            findSituation:
+                "मेरी स्थिति खोजें",
+
+            helpNow:
+                "मुझे अभी मदद चाहिए",
+
+            helplineText:
+                "राष्ट्रीय साइबर वित्तीय धोखाधड़ी हेल्पलाइन",
+
+            visualLabel:
+                "रिपोर्ट करें • सुरक्षित रहें • समाधान पाएं",
+
+            situationsLabel:
+                "मेरी स्थिति खोजें",
+
+            situationsTitle:
+                "क्या हुआ?",
+
+            situationsDescription:
+                "अपनी समस्या से संबंधित स्थिति चुनें और आगे क्या करना है जानें।",
+
+            viewGuide:
+                "मार्गदर्शिका देखें →",
+
+            moneyTitle:
+                "पैसे खो गए",
+
+            moneyShort:
+                "साइबर धोखाधड़ी के कारण पैसे ट्रांसफर हो गए हैं।",
+
+            otpTitle:
+                "फर्जी कॉल / OTP",
+
+            otpShort:
+                "फर्जी कॉल, OTP मांगने या वेरिफिकेशन की धोखाधड़ी।",
+
+            suspiciousTitle:
+                "संदिग्ध लिंक",
+
+            suspiciousShort:
+                "फिशिंग लिंक, नकली वेबसाइट या संदिग्ध फाइल।",
+
+            socialTitle:
+                "सोशल मीडिया अकाउंट हैक",
+
+            socialShort:
+                "आपका सोशल मीडिया अकाउंट किसी और के नियंत्रण में हो सकता है।",
+
+            harassmentTitle:
+                "ऑनलाइन उत्पीड़न",
+
+            harassmentShort:
+                "साइबर उत्पीड़न, ऑनलाइन पीछा करना या धमकी वाले संदेश।",
+
+            identityTitle:
+                "फर्जी प्रोफाइल",
+
+            identityShort:
+                "कोई व्यक्ति आपकी पहचान का उपयोग करके फर्जी प्रोफाइल बना रहा है।",
+
+            shoppingTitle:
+                "ऑनलाइन शॉपिंग धोखाधड़ी",
+
+            shoppingShort:
+                "ऑनलाइन खरीदारी, विक्रेता या रिफंड से संबंधित धोखाधड़ी।",
+
+            jobTitle:
+                "फर्जी नौकरी धोखाधड़ी",
+
+            jobShort:
+                "फर्जी नौकरी, भर्ती या घर से काम के नाम पर धोखाधड़ी।",
+
+            phoneTitle:
+                "खोया / चोरी हुआ मोबाइल",
+
+            phoneShort:
+                "मोबाइल, SIM और खातों को सुरक्षित रखने के लिए आवश्यक कदम।",
+
+            statisticsLabel:
+                "वेबसाइट के आंकड़े",
+
+            statisticsTitle:
+                "निर्भयसेतु गतिविधि",
+
+            statisticsDescription:
+                "वेबसाइट उपयोग और स्थिति मार्गदर्शिकाओं को देखने की जानकारी।",
+
+            totalVisitors:
+                "कुल आगंतुक",
+
+            recordedVisitors:
+                "रिकॉर्ड की गई वेबसाइट विजिट",
+
+            totalViews:
+                "कुल सेक्शन व्यू",
+
+            guideOpened:
+                "स्थिति मार्गदर्शिकाएं खोली गईं",
+
+            mostViewed:
+                "सबसे अधिक देखा गया सेक्शन",
+
+            viewSectionViews:
+                "सेक्शन व्यू देखें",
+
+            hideSectionViews:
+                "सेक्शन व्यू छिपाएं",
+
+            sectionViews:
+                "सेक्शन व्यू",
+
+            views:
+                "व्यू",
+
+            reportingLabel:
+                "आधिकारिक रिपोर्टिंग",
+
+            reportingTitle:
+                "आधिकारिक माध्यम से रिपोर्ट करें",
+
+            reportingDescription:
+                "रिपोर्टिंग और आपातकालीन सहायता के लिए आधिकारिक सरकारी माध्यमों का उपयोग करें।",
+
+            cyberCrimePortal:
+                "साइबर क्राइम पोर्टल",
+
+            cyberCrimePortalDesc:
+                "राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल के माध्यम से ऑनलाइन साइबर अपराध की शिकायत करें।",
+
+            openPortal:
+                "पोर्टल खोलें →",
+
+            helplineDescription:
+                "साइबर वित्तीय धोखाधड़ी के लिए राष्ट्रीय हेल्पलाइन।",
+
+            callNow:
+                "अभी कॉल करें →",
+
+            sancharDescription:
+                "मोबाइल कनेक्शन और खोए या चोरी हुए मोबाइल से संबंधित सेवाएं।",
+
+            openWebsite:
+                "वेबसाइट खोलें →",
+
+            emergencyDescription:
+                "तत्काल खतरे की स्थिति में आपातकालीन सहायता।",
+
+            callEmergency:
+                "आपातकालीन नंबर पर कॉल करें →",
+
+            aboutLabel:
+                "हमारे बारे में",
+
+            aboutTitle:
+                "निर्भयसेतु क्यों?",
+
+            aboutText:
+                "निर्भयसेतु हमारे समूह द्वारा कॉलेज फील्ड प्रोजेक्ट के हिस्से के रूप में विकसित साइबर सुरक्षा जागरूकता और साइबर अपराध रिपोर्टिंग गाइड है। इस परियोजना का उद्देश्य सामान्य साइबर अपराध की स्थितियों के लिए अंग्रेजी, मराठी और हिंदी में सरल और व्यावहारिक जानकारी देकर साइबर अपराध की रिपोर्टिंग को आसान बनाना है। एच. वी. देसाई कॉलेज द्वारा फील्ड रिसर्च करने, साइबर सेल के साथ बातचीत करने और समुदाय में जागरूकता के लिए एक व्यावहारिक समाधान विकसित करने का अवसर प्रदान किया गया, जिससे यह परियोजना संभव हो सकी।",
+
+            disclaimerTitle:
+                "महत्वपूर्ण:",
+
+            disclaimerText:
+                "निर्भयसेतु सामान्य जागरूकता और मार्गदर्शन प्रदान करता है। वास्तविक घटना होने पर आधिकारिक रिपोर्टिंग माध्यमों का उपयोग करें और संबंधित अधिकारियों के निर्देशों का पालन करें।",
+
+            helpModalTitle:
+                "तुरंत मदद चाहिए?",
+
+            helpModalText:
+                "यदि साइबर वित्तीय धोखाधड़ी के कारण आपके पैसे खो गए हैं, तो तुरंत 1930 पर कॉल करें और आधिकारिक साइबर क्राइम रिपोर्टिंग पोर्टल के माध्यम से शिकायत करें।",
+
+            call1930:
+                "1930 पर कॉल करें",
+
+            reportOnline:
+                "ऑनलाइन रिपोर्ट करें",
+
+            footerText:
+                "साइबर सुरक्षा और रिपोर्टिंग गाइड"
+        }
+
+    };
+
+
+    /* =====================================================
+       DETAILED GUIDE TRANSLATIONS
+       ===================================================== */
+
+    const guideTranslations = {
+
+        /* =================================================
+           MONEY LOST
+           ================================================= */
+
+        money: {
+
+            en: {
+                title: "Money Lost / Financial Fraud",
+                intro: "If money has been lost because of a cyber financial fraud, act quickly and preserve all transaction evidence.",
+
                 sections: [
-                    ["1. आगे का नुकसान रोकें", [
-                        "और पैसे न भेजें।",
-                        "OTP, UPI PIN, CVV, पासवर्ड या बैंकिंग जानकारी साझा न करें।",
-                        "अगर रिमोट एक्सेस दिया है, तो उसे बंद करें और अपने अकाउंट सुरक्षित करें।"
-                    ]],
-                    ["2. बैंक / पेमेंट सेवा से संपर्क करें", [
-                        "अनधिकृत लेनदेन की तुरंत जानकारी दें।",
-                        "ब्लॉक या dispute प्रक्रिया के बारे में पूछें।",
-                        "Transaction reference number सुरक्षित रखें।"
-                    ]],
-                    ["3. 1930 पर कॉल करें", [
-                        "राष्ट्रीय साइबर वित्तीय धोखाधड़ी हेल्पलाइन पर कॉल करें।",
-                        "लेनदेन की जानकारी तैयार रखें।",
-                        "जितनी जल्दी हो सके घटना रिपोर्ट करें।"
-                    ]],
-                    ["4. ऑनलाइन रिपोर्ट करें", [
-                        "National Cyber Crime Reporting Portal पर शिकायत करें।",
-                        "Acknowledgement / complaint details सुरक्षित रखें।"
-                    ]],
-                    ["5. ये सबूत सुरक्षित रखें", [
-                        "Transaction ID / UTR",
-                        "बैंक या वॉलेट जानकारी",
-                        "स्क्रीनशॉट",
-                        "UPI ID / फोन नंबर",
-                        "मैसेज, ईमेल या चैट",
-                        "वेबसाइट या प्रोफाइल URL"
-                    ]]
+                    {
+                        title: "1. Stop further loss",
+                        text: "Do not send any more money. Do not share OTP, UPI PIN, CVV, password, banking credentials or verification codes. If someone has remote access to your device, disconnect the remote session and secure your accounts."
+                    },
+                    {
+                        title: "2. Contact your bank or payment provider",
+                        text: "Report the unauthorized or fraudulent transaction immediately. Ask the bank or payment provider about blocking, dispute or recovery procedures. Keep the transaction reference number."
+                    },
+                    {
+                        title: "3. Call 1930",
+                        text: "Call the national cyber financial fraud helpline 1930 as soon as possible. Keep your transaction details ready while reporting."
+                    },
+                    {
+                        title: "4. Report online",
+                        text: "File a complaint through the National Cyber Crime Reporting Portal. Save the acknowledgement or complaint details after submission."
+                    },
+                    {
+                        title: "5. Keep evidence",
+                        list: [
+                            "Transaction ID / UTR",
+                            "Bank, wallet or payment provider details",
+                            "Screenshots of transactions",
+                            "UPI ID or phone number involved",
+                            "Messages, emails and chats",
+                            "Website, social media or profile URL"
+                        ]
+                    }
                 ]
             },
 
-            otp: {
+            mr: {
+                title: "पैसे गमावले / आर्थिक फसवणूक",
+                intro: "सायबर आर्थिक फसवणुकीमुळे पैसे गमावले असल्यास शक्य तितक्या लवकर कृती करा आणि व्यवहाराशी संबंधित सर्व पुरावे जतन करा.",
+
+                sections: [
+                    {
+                        title: "१. पुढील नुकसान थांबवा",
+                        text: "आता आणखी पैसे पाठवू नका. OTP, UPI PIN, CVV, पासवर्ड, बँकिंग माहिती किंवा पडताळणी कोड कोणालाही देऊ नका. तुमच्या डिव्हाइसवर कोणाला रिमोट अॅक्सेस असल्यास तो अॅक्सेस बंद करा आणि तुमची खाती सुरक्षित करा."
+                    },
+                    {
+                        title: "२. बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करा",
+                        text: "अनधिकृत किंवा फसव्या व्यवहाराची त्वरित माहिती द्या. व्यवहार ब्लॉक करणे, तक्रार करणे किंवा डिस्प्यूट प्रक्रियेबद्दल बँक किंवा पेमेंट सेवा प्रदात्याकडून माहिती घ्या. व्यवहाराचा संदर्भ क्रमांक जतन करा."
+                    },
+                    {
+                        title: "३. 1930 वर कॉल करा",
+                        text: "राष्ट्रीय सायबर आर्थिक फसवणूक हेल्पलाइन 1930 वर शक्य तितक्या लवकर कॉल करा. तक्रार करताना व्यवहाराची माहिती जवळ ठेवा."
+                    },
+                    {
+                        title: "४. ऑनलाइन तक्रार करा",
+                        text: "राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार नोंदवा. तक्रार केल्यानंतर मिळणारी पावती किंवा तक्रार क्रमांक जतन करा."
+                    },
+                    {
+                        title: "५. पुरावे जतन करा",
+                        list: [
+                            "व्यवहार क्रमांक / UTR",
+                            "बँक, वॉलेट किंवा पेमेंट सेवा प्रदात्याची माहिती",
+                            "व्यवहाराचे स्क्रीनशॉट",
+                            "संबंधित UPI ID किंवा फोन नंबर",
+                            "मेसेज, ईमेल आणि चॅट",
+                            "वेबसाइट, सोशल मीडिया किंवा प्रोफाइलची लिंक"
+                        ]
+                    }
+                ]
+            },
+
+            hi: {
+                title: "पैसे खो गए / वित्तीय धोखाधड़ी",
+                intro: "यदि साइबर वित्तीय धोखाधड़ी के कारण पैसे खो गए हैं, तो तुरंत कार्रवाई करें और सभी लेनदेन से संबंधित सबूत सुरक्षित रखें।",
+
+                sections: [
+                    {
+                        title: "1. आगे का नुकसान रोकें",
+                        text: "और पैसे न भेजें। OTP, UPI PIN, CVV, पासवर्ड, बैंकिंग जानकारी या वेरिफिकेशन कोड किसी को न दें। यदि किसी व्यक्ति को आपके डिवाइस का रिमोट एक्सेस मिला है, तो उसे बंद करें और अपने खातों को सुरक्षित करें।"
+                    },
+                    {
+                        title: "2. बैंक या पेमेंट सेवा से संपर्क करें",
+                        text: "अनधिकृत या धोखाधड़ी वाले लेनदेन की तुरंत जानकारी दें। बैंक या पेमेंट सेवा से ब्लॉकिंग, विवाद या रिकवरी प्रक्रिया के बारे में पूछें। लेनदेन का संदर्भ नंबर सुरक्षित रखें।"
+                    },
+                    {
+                        title: "3. 1930 पर कॉल करें",
+                        text: "राष्ट्रीय साइबर वित्तीय धोखाधड़ी हेल्पलाइन 1930 पर जल्द से जल्द कॉल करें। शिकायत करते समय लेनदेन की जानकारी तैयार रखें।"
+                    },
+                    {
+                        title: "4. ऑनलाइन रिपोर्ट करें",
+                        text: "राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल पर शिकायत दर्ज करें। शिकायत के बाद मिलने वाली पावती या शिकायत विवरण सुरक्षित रखें।"
+                    },
+                    {
+                        title: "5. सबूत सुरक्षित रखें",
+                        list: [
+                            "लेनदेन ID / UTR",
+                            "बैंक, वॉलेट या पेमेंट सेवा की जानकारी",
+                            "लेनदेन के स्क्रीनशॉट",
+                            "संबंधित UPI ID या फोन नंबर",
+                            "मैसेज, ईमेल और चैट",
+                            "वेबसाइट, सोशल मीडिया या प्रोफाइल URL"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           OTP
+           ================================================= */
+
+        otp: {
+
+            en: {
+                title: "Fake Call / OTP Scam",
+                intro: "If someone calls or messages pretending to be a bank, company, government service or another trusted person, do not share security information.",
+
+                sections: [
+                    {
+                        title: "1. End the conversation",
+                        text: "Do not share OTP, verification codes, UPI PIN, CVV, password or banking credentials. Do not install unknown apps or allow remote access because of the caller."
+                    },
+                    {
+                        title: "2. Check your accounts",
+                        text: "Check your bank and UPI accounts. Also check whether passwords, email addresses, recovery information or social media settings were changed. Change credentials immediately if you shared them."
+                    },
+                    {
+                        title: "3. If money was lost",
+                        text: "Contact your bank or payment provider immediately. Call 1930 and report the incident through the National Cyber Crime Reporting Portal."
+                    },
+                    {
+                        title: "4. Preserve evidence",
+                        list: [
+                            "Caller phone number",
+                            "SMS or WhatsApp messages",
+                            "Screenshots",
+                            "Transaction details",
+                            "Emails and suspicious links"
+                        ]
+                    }
+                ]
+            },
+
+            mr: {
+                title: "बनावट कॉल / OTP फसवणूक",
+                intro: "बँक, कंपनी, सरकारी सेवा किंवा ओळखीची व्यक्ती असल्याचे भासवून कॉल किंवा मेसेज करणाऱ्या व्यक्तीवर विश्वास ठेवण्यापूर्वी काळजी घ्या.",
+
+                sections: [
+                    {
+                        title: "१. संभाषण थांबवा",
+                        text: "OTP, पडताळणी कोड, UPI PIN, CVV, पासवर्ड किंवा बँकिंग माहिती देऊ नका. कॉल करणाऱ्या व्यक्तीच्या सांगण्यावरून अनोळखी अॅप इन्स्टॉल करू नका किंवा रिमोट अॅक्सेस देऊ नका."
+                    },
+                    {
+                        title: "२. तुमची खाती तपासा",
+                        text: "बँक आणि UPI खाते तपासा. पासवर्ड, ईमेल, रिकव्हरी माहिती किंवा सोशल मीडिया सेटिंगमध्ये बदल झाला आहे का ते पहा. माहिती शेअर झाली असल्यास संबंधित पासवर्ड त्वरित बदला."
+                    },
+                    {
+                        title: "३. पैसे गमावले असल्यास",
+                        text: "ताबडतोब बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करा. 1930 वर कॉल करा आणि राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार करा."
+                    },
+                    {
+                        title: "४. पुरावे जतन करा",
+                        list: [
+                            "कॉल करणाऱ्याचा फोन नंबर",
+                            "SMS किंवा WhatsApp मेसेज",
+                            "स्क्रीनशॉट",
+                            "व्यवहाराची माहिती",
+                            "ईमेल आणि संशयास्पद लिंक"
+                        ]
+                    }
+                ]
+            },
+
+            hi: {
                 title: "फर्जी कॉल / OTP धोखाधड़ी",
-                subtitle: "किसी ने OTP, PIN या व्यक्तिगत जानकारी मांगी है।",
-                important: "कॉल करने वाले व्यक्ति के साथ OTP, UPI PIN, CVV, पासवर्ड या बैंकिंग जानकारी साझा न करें।",
+                intro: "यदि कोई व्यक्ति बैंक, कंपनी, सरकारी सेवा या किसी भरोसेमंद व्यक्ति के नाम पर कॉल या मैसेज करता है, तो सुरक्षा से जुड़ी जानकारी साझा न करें।",
+
                 sections: [
-                    ["1. बातचीत समाप्त करें", [
-                        "OTP या verification code साझा न करें।",
-                        "UPI PIN, CVV या पासवर्ड साझा न करें।",
-                        "किसी के कहने पर ऐप इंस्टॉल या remote access न दें।"
-                    ]],
-                    ["2. अपने अकाउंट जांचें", [
-                        "बैंक और UPI transactions जांचें।",
-                        "देखें कि अकाउंट, ईमेल या सोशल मीडिया पासवर्ड बदला तो नहीं।",
-                        "अगर जानकारी साझा की है तो पासवर्ड तुरंत बदलें।"
-                    ]],
-                    ["3. अगर पैसे चले गए", [
-                        "बैंक / पेमेंट सेवा से तुरंत संपर्क करें।",
-                        "1930 पर कॉल करें।",
-                        "National Cyber Crime Reporting Portal पर शिकायत करें।"
-                    ]],
-                    ["4. सबूत सुरक्षित रखें", [
-                        "कॉल करने वाले का फोन नंबर",
-                        "SMS / WhatsApp messages",
-                        "स्क्रीनशॉट",
-                        "Transaction details",
-                        "ईमेल या प्राप्त लिंक"
-                    ]]
+                    {
+                        title: "1. बातचीत समाप्त करें",
+                        text: "OTP, वेरिफिकेशन कोड, UPI PIN, CVV, पासवर्ड या बैंकिंग जानकारी साझा न करें। कॉल करने वाले के कहने पर कोई अनजान ऐप इंस्टॉल न करें और रिमोट एक्सेस न दें।"
+                    },
+                    {
+                        title: "2. अपने खातों की जांच करें",
+                        text: "बैंक और UPI खाते जांचें। पासवर्ड, ईमेल, रिकवरी जानकारी या सोशल मीडिया सेटिंग में बदलाव हुआ है या नहीं देखें। यदि जानकारी साझा हुई है तो संबंधित पासवर्ड तुरंत बदलें।"
+                    },
+                    {
+                        title: "3. पैसे खो गए हों तो",
+                        text: "तुरंत बैंक या पेमेंट सेवा से संपर्क करें। 1930 पर कॉल करें और राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल पर शिकायत करें।"
+                    },
+                    {
+                        title: "4. सबूत सुरक्षित रखें",
+                        list: [
+                            "कॉलर का फोन नंबर",
+                            "SMS या WhatsApp संदेश",
+                            "स्क्रीनशॉट",
+                            "लेनदेन की जानकारी",
+                            "ईमेल और संदिग्ध लिंक"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           SUSPICIOUS LINK
+           ================================================= */
+
+        suspicious: {
+
+            en: {
+                title: "Suspicious Link / Phishing",
+                intro: "Do not trust unexpected links, fake login pages or messages asking you to urgently verify an account.",
+
+                sections: [
+                    {
+                        title: "1. If you have NOT clicked",
+                        text: "Do not open or download anything from the message. Delete or report the message if appropriate."
+                    },
+                    {
+                        title: "2. If you clicked the link",
+                        text: "Close the page. Do not enter passwords, OTPs, card details or other information. Do not download unknown applications or files."
+                    },
+                    {
+                        title: "3. If you entered a password",
+                        text: "Change the password immediately. Use a strong unique password, enable two-factor authentication and sign out suspicious sessions or devices."
+                    },
+                    {
+                        title: "4. If banking information was exposed",
+                        text: "Contact your bank or payment provider, monitor transactions and call 1930 if money was lost."
+                    },
+                    {
+                        title: "5. Preserve evidence",
+                        list: [
+                            "Suspicious URL",
+                            "Screenshot of the message",
+                            "Sender details",
+                            "Email address or phone number",
+                            "Downloaded file name, if any"
+                        ]
+                    }
                 ]
             },
 
-            suspicious: {
+            mr: {
+                title: "संशयास्पद लिंक / फिशिंग",
+                intro: "अचानक आलेल्या लिंक, बनावट लॉगिन पेज किंवा खाते तातडीने पडताळण्यास सांगणाऱ्या मेसेजवर विश्वास ठेवू नका.",
+
+                sections: [
+                    {
+                        title: "१. लिंक उघडली नसेल तर",
+                        text: "मेसेजमधील लिंक उघडू नका किंवा काहीही डाउनलोड करू नका. आवश्यक असल्यास मेसेज डिलीट किंवा रिपोर्ट करा."
+                    },
+                    {
+                        title: "२. लिंक उघडली असल्यास",
+                        text: "पेज बंद करा. पासवर्ड, OTP, कार्डची माहिती किंवा इतर वैयक्तिक माहिती भरू नका. अनोळखी अॅप किंवा फाइल डाउनलोड करू नका."
+                    },
+                    {
+                        title: "३. पासवर्ड टाकला असल्यास",
+                        text: "पासवर्ड त्वरित बदला. मजबूत आणि वेगळा पासवर्ड वापरा, दोन-स्तरीय सुरक्षा सुरू करा आणि संशयास्पद डिव्हाइस किंवा सेशनमधून साइन आउट करा."
+                    },
+                    {
+                        title: "४. बँकिंग माहिती उघड झाली असल्यास",
+                        text: "बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करा, व्यवहार तपासा आणि पैसे गमावले असल्यास 1930 वर कॉल करा."
+                    },
+                    {
+                        title: "५. पुरावे जतन करा",
+                        list: [
+                            "संशयास्पद URL",
+                            "मेसेजचा स्क्रीनशॉट",
+                            "पाठवणाऱ्याची माहिती",
+                            "ईमेल किंवा फोन नंबर",
+                            "डाउनलोड झालेल्या फाइलचे नाव"
+                        ]
+                    }
+                ]
+            },
+
+            hi: {
                 title: "संदिग्ध लिंक / फिशिंग",
-                subtitle: "आपको संदिग्ध वेबसाइट, मैसेज या लॉगिन लिंक मिला या आपने उसे खोला।",
-                important: "संदिग्ध वेबसाइट पर पासवर्ड, OTP, कार्ड विवरण या अन्य संवेदनशील जानकारी न डालें।",
+                intro: "अचानक आने वाली लिंक, नकली लॉगिन पेज या तुरंत अकाउंट वेरिफाई करने वाले संदेशों पर भरोसा न करें।",
+
                 sections: [
-                    ["1. लिंक नहीं खोला है", [
-                        "लिंक न खोलें।",
-                        "कुछ डाउनलोड न करें।",
-                        "संदिग्ध संदेश को डिलीट या रिपोर्ट करें।"
-                    ]],
-                    ["2. लिंक खोल दिया है", [
-                        "संदिग्ध पेज बंद करें।",
-                        "आगे कोई जानकारी न डालें।",
-                        "अज्ञात ऐप या फाइल डाउनलोड न करें।"
-                    ]],
-                    ["3. पासवर्ड डाल दिया है", [
-                        "पासवर्ड तुरंत बदलें।",
-                        "मजबूत और अलग पासवर्ड इस्तेमाल करें।",
-                        "Two-factor authentication चालू करें।",
-                        "जहाँ उपलब्ध हो, संदिग्ध sessions से sign out करें।"
-                    ]],
-                    ["4. बैंकिंग जानकारी साझा हुई है", [
-                        "बैंक / पेमेंट सेवा से तुरंत संपर्क करें।",
-                        "Transactions जांचें।",
-                        "पैसे चले गए हों तो 1930 पर कॉल करें।"
-                    ]],
-                    ["5. सबूत सुरक्षित रखें", [
-                        "संदिग्ध URL",
-                        "मैसेज का स्क्रीनशॉट",
-                        "Sender details",
-                        "ईमेल / फोन नंबर",
-                        "डाउनलोड की गई फाइल का नाम"
-                    ]]
+                    {
+                        title: "1. यदि लिंक पर क्लिक नहीं किया",
+                        text: "लिंक न खोलें और कुछ भी डाउनलोड न करें। आवश्यकता होने पर संदेश को डिलीट या रिपोर्ट करें।"
+                    },
+                    {
+                        title: "2. यदि लिंक पर क्लिक किया",
+                        text: "पेज बंद करें। पासवर्ड, OTP, कार्ड की जानकारी या अन्य जानकारी न भरें। अनजान ऐप या फाइल डाउनलोड न करें।"
+                    },
+                    {
+                        title: "3. यदि पासवर्ड दर्ज किया",
+                        text: "पासवर्ड तुरंत बदलें। मजबूत और अलग पासवर्ड रखें, टू-फैक्टर ऑथेंटिकेशन चालू करें और संदिग्ध डिवाइस या सेशन से साइन आउट करें।"
+                    },
+                    {
+                        title: "4. बैंकिंग जानकारी सामने आ गई हो",
+                        text: "बैंक या पेमेंट सेवा से संपर्क करें, लेनदेन पर नजर रखें और पैसे खो गए हों तो 1930 पर कॉल करें।"
+                    },
+                    {
+                        title: "5. सबूत सुरक्षित रखें",
+                        list: [
+                            "संदिग्ध URL",
+                            "संदेश का स्क्रीनशॉट",
+                            "भेजने वाले की जानकारी",
+                            "ईमेल या फोन नंबर",
+                            "डाउनलोड की गई फाइल का नाम"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           SOCIAL ACCOUNT HACKED
+           ================================================= */
+
+        social: {
+
+            en: {
+                title: "Social Media Account Hacked",
+                intro: "If your social media account has been compromised, focus first on recovery and preventing further misuse.",
+
+                sections: [
+                    {
+                        title: "1. Use official account recovery",
+                        text: "Use the official recovery option provided by the social media platform. Do not pay unofficial people who promise account recovery."
+                    },
+                    {
+                        title: "2. Change your password",
+                        text: "Set a strong unique password and do not reuse the same password on other accounts."
+                    },
+                    {
+                        title: "3. Secure the account",
+                        text: "Enable two-factor authentication, review active sessions, remove unknown devices, check recovery email and phone number and remove suspicious third-party applications."
+                    },
+                    {
+                        title: "4. Protect your contacts",
+                        text: "Warn friends and family that the account may be compromised. Tell them not to send money or trust suspicious messages from the account."
+                    },
+                    {
+                        title: "5. Preserve evidence",
+                        list: [
+                            "Profile URL",
+                            "Screenshots",
+                            "Suspicious messages",
+                            "Login alerts",
+                            "Recovery emails"
+                        ]
+                    }
                 ]
             },
 
-            social: {
+            mr: {
+                title: "सोशल मीडिया खाते हॅक झाले",
+                intro: "तुमचे सोशल मीडिया खाते हॅक झाल्यास प्रथम खाते परत मिळवण्यावर आणि त्याचा गैरवापर थांबवण्यावर लक्ष द्या.",
+
+                sections: [
+                    {
+                        title: "१. अधिकृत खाते रिकव्हरी वापरा",
+                        text: "सोशल मीडिया प्लॅटफॉर्मने दिलेला अधिकृत रिकव्हरी पर्याय वापरा. खाते परत मिळवून देण्याचे आश्वासन देणाऱ्या अनधिकृत व्यक्तींना पैसे देऊ नका."
+                    },
+                    {
+                        title: "२. पासवर्ड बदला",
+                        text: "मजबूत आणि वेगळा पासवर्ड तयार करा. तोच पासवर्ड इतर खात्यांसाठी वापरू नका."
+                    },
+                    {
+                        title: "३. खाते सुरक्षित करा",
+                        text: "दोन-स्तरीय सुरक्षा सुरू करा, सक्रिय सेशन तपासा, अनोळखी डिव्हाइस काढा, रिकव्हरी ईमेल आणि फोन नंबर तपासा आणि संशयास्पद थर्ड-पार्टी अॅप्स काढा."
+                    },
+                    {
+                        title: "४. संपर्कातील लोकांचे संरक्षण करा",
+                        text: "मित्र आणि कुटुंबीयांना खाते हॅक झाल्याची माहिती द्या. त्या खात्यातून आलेल्या संशयास्पद मेसेजवर विश्वास ठेवू नका किंवा पैसे पाठवू नका असे सांगा."
+                    },
+                    {
+                        title: "५. पुरावे जतन करा",
+                        list: [
+                            "प्रोफाइलची लिंक",
+                            "स्क्रीनशॉट",
+                            "संशयास्पद मेसेज",
+                            "लॉगिन अलर्ट",
+                            "रिकव्हरी ईमेल"
+                        ]
+                    }
+                ]
+            },
+
+            hi: {
                 title: "सोशल मीडिया अकाउंट हैक",
-                subtitle: "किसी ने आपके सोशल मीडिया अकाउंट में प्रवेश किया या उसे अपने नियंत्रण में लिया।",
-                important: "पहले अकाउंट सुरक्षित करें और अगर हैकर आपके अकाउंट से संदेश भेज रहा है तो अपने contacts को बताएं।",
+                intro: "यदि आपका सोशल मीडिया अकाउंट हैक हो गया है, तो पहले अकाउंट रिकवर करने और आगे के गलत इस्तेमाल को रोकने पर ध्यान दें।",
+
                 sections: [
-                    ["1. अकाउंट रिकवरी करें", [
-                        "प्लेटफॉर्म की official account recovery प्रक्रिया इस्तेमाल करें।",
-                        "अनौपचारिक recovery services का इस्तेमाल न करें।"
-                    ]],
-                    ["2. पासवर्ड बदलें", [
-                        "नया मजबूत पासवर्ड बनाएं।",
-                        "Compromised password कहीं और इस्तेमाल न करें।"
-                    ]],
-                    ["3. अकाउंट सुरक्षित करें", [
-                        "Two-factor authentication चालू करें।",
-                        "Active login sessions जांचें।",
-                        "अज्ञात devices हटाएं।",
-                        "Recovery email और phone number जांचें।",
-                        "संदिग्ध third-party apps हटाएं।"
-                    ]],
-                    ["4. अपने contacts को सावधान करें", [
-                        "मित्रों और परिवार को बताएं कि अकाउंट compromised है।",
-                        "उनसे कहें कि आपके अकाउंट से आए संदिग्ध messages पर भरोसा न करें।"
-                    ]],
-                    ["5. सबूत सुरक्षित रखें", [
-                        "Profile URL",
-                        "स्क्रीनशॉट",
-                        "संदिग्ध संदेश",
-                        "Login alerts",
-                        "Recovery emails"
-                    ]]
+                    {
+                        title: "1. आधिकारिक अकाउंट रिकवरी का उपयोग करें",
+                        text: "सोशल मीडिया प्लेटफॉर्म द्वारा दिए गए आधिकारिक रिकवरी विकल्प का उपयोग करें। अकाउंट रिकवरी का वादा करने वाले अनजान लोगों को पैसे न दें।"
+                    },
+                    {
+                        title: "2. पासवर्ड बदलें",
+                        text: "मजबूत और अलग पासवर्ड रखें। उसी पासवर्ड को दूसरे खातों में इस्तेमाल न करें।"
+                    },
+                    {
+                        title: "3. अकाउंट सुरक्षित करें",
+                        text: "टू-फैक्टर ऑथेंटिकेशन चालू करें, एक्टिव सेशन जांचें, अनजान डिवाइस हटाएं, रिकवरी ईमेल और फोन नंबर जांचें और संदिग्ध थर्ड-पार्टी ऐप हटाएं।"
+                    },
+                    {
+                        title: "4. अपने संपर्कों को सुरक्षित करें",
+                        text: "दोस्तों और परिवार को बताएं कि अकाउंट हैक हो सकता है। उन्हें उस अकाउंट से आने वाले संदिग्ध संदेशों पर भरोसा न करने और पैसे न भेजने के लिए कहें।"
+                    },
+                    {
+                        title: "5. सबूत सुरक्षित रखें",
+                        list: [
+                            "प्रोफाइल URL",
+                            "स्क्रीनशॉट",
+                            "संदिग्ध संदेश",
+                            "लॉगिन अलर्ट",
+                            "रिकवरी ईमेल"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           HARASSMENT
+           ================================================= */
+
+        harassment: {
+
+            en: {
+                title: "Cyber Harassment / Stalking",
+                intro: "If you are being harassed or threatened online, preserve evidence and use the available reporting and safety options.",
+
+                sections: [
+                    {
+                        title: "1. Preserve evidence",
+                        text: "Take screenshots and save usernames, profile links, messages, emails and dates. Do not delete important evidence before saving it."
+                    },
+                    {
+                        title: "2. Protect yourself",
+                        text: "Block or restrict the person where appropriate. Review privacy settings and limit unwanted contact, tagging or mentions."
+                    },
+                    {
+                        title: "3. Report the account",
+                        text: "Use the platform's official reporting option and save the report confirmation if available."
+                    },
+                    {
+                        title: "4. Serious or immediate threat",
+                        text: "If there is an immediate danger or physical threat, contact emergency services. For cyber-related incidents, use the appropriate police or cybercrime reporting channel."
+                    },
+                    {
+                        title: "5. Keep evidence together",
+                        list: [
+                            "Screenshots",
+                            "Usernames",
+                            "Profile URLs",
+                            "Messages and emails",
+                            "Dates and times",
+                            "Report confirmations"
+                        ]
+                    }
                 ]
             },
 
-            harassment: {
+            mr: {
+                title: "सायबर छळ / ऑनलाइन पाठलाग",
+                intro: "ऑनलाइन छळ किंवा धमकीचा सामना करत असल्यास पुरावे जतन करा आणि उपलब्ध सुरक्षा व तक्रार पर्यायांचा वापर करा.",
+
+                sections: [
+                    {
+                        title: "१. पुरावे जतन करा",
+                        text: "स्क्रीनशॉट घ्या आणि युजरनेम, प्रोफाइल लिंक, मेसेज, ईमेल आणि तारीख जतन करा. महत्त्वाचे पुरावे जतन करण्यापूर्वी ते डिलीट करू नका."
+                    },
+                    {
+                        title: "२. स्वतःचे संरक्षण करा",
+                        text: "योग्य असल्यास संबंधित व्यक्तीला ब्लॉक किंवा रिस्ट्रिक्ट करा. प्रायव्हसी सेटिंग तपासा आणि अनोळखी संपर्क, टॅग किंवा मेंशन मर्यादित करा."
+                    },
+                    {
+                        title: "३. खाते रिपोर्ट करा",
+                        text: "प्लॅटफॉर्मचा अधिकृत रिपोर्ट पर्याय वापरा आणि उपलब्ध असल्यास रिपोर्टची पुष्टी जतन करा."
+                    },
+                    {
+                        title: "४. गंभीर किंवा तात्काळ धोका",
+                        text: "तात्काळ धोका किंवा शारीरिक धमकी असल्यास आपत्कालीन सेवांशी संपर्क करा. सायबर घटनेसाठी योग्य पोलीस किंवा सायबर क्राईम तक्रार माध्यमाचा वापर करा."
+                    },
+                    {
+                        title: "५. सर्व पुरावे एकत्र ठेवा",
+                        list: [
+                            "स्क्रीनशॉट",
+                            "युजरनेम",
+                            "प्रोफाइल लिंक",
+                            "मेसेज आणि ईमेल",
+                            "तारीख आणि वेळ",
+                            "रिपोर्टची पुष्टी"
+                        ]
+                    }
+                ]
+            },
+
+            hi: {
                 title: "साइबर उत्पीड़न / ऑनलाइन पीछा",
-                subtitle: "आपको धमकी, परेशान करने वाले या बार-बार ऑनलाइन संदेश मिल रहे हैं।",
-                important: "सुरक्षित होने पर संदेश डिलीट करने से पहले सबूत सुरक्षित रखें।",
+                intro: "यदि आपको ऑनलाइन परेशान या धमकी दी जा रही है, तो सबूत सुरक्षित रखें और उपलब्ध सुरक्षा एवं रिपोर्टिंग विकल्पों का उपयोग करें।",
+
                 sections: [
-                    ["1. सबूत सुरक्षित रखें", [
-                        "स्क्रीनशॉट लें।",
-                        "Username और profile links सुरक्षित रखें।",
-                        "Messages, emails और तारीख सुरक्षित रखें।"
-                    ]],
-                    ["2. खुद को सुरक्षित करें", [
-                        "जरूरत के अनुसार account block या restrict करें।",
-                        "Privacy settings जांचें।",
-                        "कौन आपको contact या tag कर सकता है उसे सीमित करें।"
-                    ]],
-                    ["3. अकाउंट रिपोर्ट करें", [
-                        "प्लेटफॉर्म का official reporting option इस्तेमाल करें।",
-                        "Report confirmation हो तो सुरक्षित रखें।"
-                    ]],
-                    ["4. गंभीर या तुरंत खतरा", [
-                        "अगर तुरंत खतरा या शारीरिक धमकी है तो emergency services से संपर्क करें।",
-                        "साइबर अपराध के लिए उचित police / cybercrime channel का उपयोग करें।"
-                    ]],
-                    ["5. सबूत सुरक्षित रखें", [
-                        "स्क्रीनशॉट",
-                        "Profile URLs",
-                        "Usernames",
-                        "फोन नंबर",
-                        "Messages / emails",
-                        "तारीख और समय"
-                    ]]
+                    {
+                        title: "1. सबूत सुरक्षित रखें",
+                        text: "स्क्रीनशॉट लें और यूजरनेम, प्रोफाइल लिंक, संदेश, ईमेल और तारीख सुरक्षित रखें। जरूरी सबूत सुरक्षित करने से पहले उन्हें डिलीट न करें।"
+                    },
+                    {
+                        title: "2. खुद को सुरक्षित रखें",
+                        text: "जरूरत के अनुसार व्यक्ति को ब्लॉक या रिस्ट्रिक्ट करें। प्राइवेसी सेटिंग जांचें और अनचाहे संपर्क, टैग या मेंशन को सीमित करें।"
+                    },
+                    {
+                        title: "3. अकाउंट रिपोर्ट करें",
+                        text: "प्लेटफॉर्म के आधिकारिक रिपोर्ट विकल्प का उपयोग करें और उपलब्ध होने पर रिपोर्ट की पुष्टि सुरक्षित रखें।"
+                    },
+                    {
+                        title: "4. गंभीर या तत्काल खतरा",
+                        text: "यदि तत्काल खतरा या शारीरिक धमकी हो तो आपातकालीन सेवाओं से संपर्क करें। साइबर घटना के लिए उचित पुलिस या साइबर क्राइम रिपोर्टिंग माध्यम का उपयोग करें।"
+                    },
+                    {
+                        title: "5. सभी सबूत एक साथ रखें",
+                        list: [
+                            "स्क्रीनशॉट",
+                            "यूजरनेम",
+                            "प्रोफाइल URL",
+                            "संदेश और ईमेल",
+                            "तारीख और समय",
+                            "रिपोर्ट की पुष्टि"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           FAKE PROFILE
+           ================================================= */
+
+        identity: {
+
+            en: {
+                title: "Fake Profile / Impersonation",
+                intro: "If someone is pretending to be you online, document the fake profile and report it through the platform and appropriate official channels.",
+
+                sections: [
+                    {
+                        title: "1. Capture the profile",
+                        text: "Take screenshots of the fake profile and save the profile URL, username and visible details."
+                    },
+                    {
+                        title: "2. Report the profile",
+                        text: "Use the platform's official impersonation or fake-account reporting option. Inform your contacts if the fake profile may contact them."
+                    },
+                    {
+                        title: "3. Protect your real account",
+                        text: "If your own account may also be compromised, change the password, enable two-factor authentication, review active sessions and check recovery information."
+                    },
+                    {
+                        title: "4. Preserve evidence",
+                        list: [
+                            "Fake profile URL",
+                            "Username",
+                            "Screenshots",
+                            "Messages sent by the fake account",
+                            "Details of affected contacts"
+                        ]
+                    },
+                    {
+                        title: "5. Report cybercrime when appropriate",
+                        text: "Where appropriate, report the incident through the National Cyber Crime Reporting Portal and keep the complaint details."
+                    }
                 ]
             },
 
-            identity: {
-                title: "फर्जी प्रोफाइल / पहचान का गलत उपयोग",
-                subtitle: "कोई आपकी या किसी अन्य व्यक्ति की पहचान का उपयोग करके ऑनलाइन प्रोफाइल बना रहा है।",
-                important: "फर्जी प्रोफाइल हटने से पहले उसकी जानकारी सुरक्षित रखें।",
+            mr: {
+                title: "बनावट प्रोफाइल / दुसऱ्याची ओळख वापरणे",
+                intro: "कोणी तुमच्या नावाने ऑनलाइन बनावट प्रोफाइल तयार केले असल्यास त्या प्रोफाइलचे पुरावे जतन करा आणि प्लॅटफॉर्म तसेच योग्य अधिकृत माध्यमातून तक्रार करा.",
+
                 sections: [
-                    ["1. प्रोफाइल सुरक्षित करें", [
-                        "स्क्रीनशॉट लें।",
-                        "Profile URL कॉपी करें।",
-                        "Username और account details सुरक्षित रखें।"
-                    ]],
-                    ["2. प्रोफाइल रिपोर्ट करें", [
-                        "प्लेटफॉर्म का impersonation / fake account reporting option इस्तेमाल करें।",
-                        "अगर आपकी पहचान का उपयोग हुआ है तो परिचितों को बताएं।"
-                    ]],
-                    ["3. अपना असली अकाउंट सुरक्षित करें", [
-                        "अकाउंट खतरे में हो तो पासवर्ड बदलें।",
-                        "Two-factor authentication चालू करें।",
-                        "Active sessions और recovery information जांचें।"
-                    ]],
-                    ["4. सबूत सुरक्षित रखें", [
-                        "Profile URL",
-                        "Username",
-                        "स्क्रीनशॉट",
-                        "Messages",
-                        "ईमेल या फोन नंबर"
-                    ]],
-                    ["5. जरूरत होने पर साइबर रिपोर्ट करें", [
-                        "लागू होने पर National Cyber Crime Reporting Portal का उपयोग करें।"
-                    ]]
+                    {
+                        title: "१. प्रोफाइलचे पुरावे घ्या",
+                        text: "बनावट प्रोफाइलचे स्क्रीनशॉट घ्या आणि प्रोफाइल लिंक, युजरनेम व दिसणारी माहिती जतन करा."
+                    },
+                    {
+                        title: "२. प्रोफाइल रिपोर्ट करा",
+                        text: "प्लॅटफॉर्मचा अधिकृत impersonation किंवा fake account रिपोर्ट पर्याय वापरा. बनावट प्रोफाइल तुमच्या संपर्कातील लोकांना मेसेज करू शकत असल्यास त्यांना माहिती द्या."
+                    },
+                    {
+                        title: "३. तुमचे खरे खाते सुरक्षित करा",
+                        text: "तुमचे स्वतःचे खातेही धोक्यात असल्यास पासवर्ड बदला, दोन-स्तरीय सुरक्षा सुरू करा, सक्रिय सेशन तपासा आणि रिकव्हरी माहिती तपासा."
+                    },
+                    {
+                        title: "४. पुरावे जतन करा",
+                        list: [
+                            "बनावट प्रोफाइल लिंक",
+                            "युजरनेम",
+                            "स्क्रीनशॉट",
+                            "बनावट खात्यातून आलेले मेसेज",
+                            "प्रभावित संपर्कांची माहिती"
+                        ]
+                    },
+                    {
+                        title: "५. आवश्यक असल्यास सायबर गुन्ह्याची तक्रार करा",
+                        text: "योग्य परिस्थितीत राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार करा आणि तक्रारीची माहिती जतन करा."
+                    }
                 ]
             },
 
-            shopping: {
+            hi: {
+                title: "फर्जी प्रोफाइल / पहचान की नकल",
+                intro: "यदि कोई व्यक्ति ऑनलाइन आपकी पहचान का उपयोग करके फर्जी प्रोफाइल बना रहा है, तो प्रोफाइल के सबूत सुरक्षित करें और प्लेटफॉर्म तथा उचित आधिकारिक माध्यम से रिपोर्ट करें।",
+
+                sections: [
+                    {
+                        title: "1. प्रोफाइल का रिकॉर्ड रखें",
+                        text: "फर्जी प्रोफाइल के स्क्रीनशॉट लें और प्रोफाइल URL, यूजरनेम तथा दिखाई देने वाली जानकारी सुरक्षित रखें।"
+                    },
+                    {
+                        title: "2. प्रोफाइल रिपोर्ट करें",
+                        text: "प्लेटफॉर्म के आधिकारिक impersonation या fake account रिपोर्ट विकल्प का उपयोग करें। यदि फर्जी प्रोफाइल आपके संपर्कों को संदेश भेज सकती है तो उन्हें जानकारी दें।"
+                    },
+                    {
+                        title: "3. अपना असली अकाउंट सुरक्षित करें",
+                        text: "यदि आपका अपना अकाउंट भी खतरे में हो सकता है, तो पासवर्ड बदलें, टू-फैक्टर ऑथेंटिकेशन चालू करें, एक्टिव सेशन जांचें और रिकवरी जानकारी देखें।"
+                    },
+                    {
+                        title: "4. सबूत सुरक्षित रखें",
+                        list: [
+                            "फर्जी प्रोफाइल URL",
+                            "यूजरनेम",
+                            "स्क्रीनशॉट",
+                            "फर्जी अकाउंट से भेजे गए संदेश",
+                            "प्रभावित संपर्कों की जानकारी"
+                        ]
+                    },
+                    {
+                        title: "5. आवश्यकता होने पर साइबर अपराध रिपोर्ट करें",
+                        text: "उचित स्थिति में राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल पर शिकायत करें और शिकायत का विवरण सुरक्षित रखें।"
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           SHOPPING FRAUD
+           ================================================= */
+
+        shopping: {
+
+            en: {
+                title: "Online Shopping Fraud",
+                intro: "If an online seller, shopping website or refund process appears fraudulent, stop further payments and preserve order and transaction evidence.",
+
+                sections: [
+                    {
+                        title: "1. Stop further payment",
+                        text: "Do not pay additional delivery, refund, verification or processing fees. Do not share OTP, PIN or banking information."
+                    },
+                    {
+                        title: "2. Contact the platform",
+                        text: "Use official customer support or dispute options. Report the seller or listing and save the complaint reference number."
+                    },
+                    {
+                        title: "3. Contact your bank or payment provider",
+                        text: "Report the fraudulent or unauthorized transaction and ask about the applicable dispute procedure."
+                    },
+                    {
+                        title: "4. If money was lost",
+                        text: "Call 1930 as soon as possible and report the incident through the National Cyber Crime Reporting Portal."
+                    },
+                    {
+                        title: "5. Preserve evidence",
+                        list: [
+                            "Order ID",
+                            "Transaction ID / UTR",
+                            "Seller name or profile",
+                            "Website or listing URL",
+                            "Chats and emails",
+                            "Screenshots",
+                            "Delivery or refund messages"
+                        ]
+                    }
+                ]
+            },
+
+            mr: {
+                title: "ऑनलाइन खरेदी फसवणूक",
+                intro: "ऑनलाइन विक्रेता, शॉपिंग वेबसाइट किंवा रिफंड प्रक्रिया फसवी वाटत असल्यास पुढील पेमेंट थांबवा आणि ऑर्डर व व्यवहाराचे पुरावे जतन करा.",
+
+                sections: [
+                    {
+                        title: "१. पुढील पेमेंट थांबवा",
+                        text: "अतिरिक्त डिलिव्हरी, रिफंड, पडताळणी किंवा प्रोसेसिंग फी देऊ नका. OTP, PIN किंवा बँकिंग माहिती शेअर करू नका."
+                    },
+                    {
+                        title: "२. प्लॅटफॉर्मशी संपर्क करा",
+                        text: "अधिकृत ग्राहक सेवा किंवा डिस्प्यूट पर्याय वापरा. विक्रेता किंवा लिस्टिंग रिपोर्ट करा आणि तक्रार क्रमांक जतन करा."
+                    },
+                    {
+                        title: "३. बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करा",
+                        text: "फसव्या किंवा अनधिकृत व्यवहाराची माहिती द्या आणि लागू असलेल्या डिस्प्यूट प्रक्रियेबद्दल विचारा."
+                    },
+                    {
+                        title: "४. पैसे गमावले असल्यास",
+                        text: "शक्य तितक्या लवकर 1930 वर कॉल करा आणि राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार करा."
+                    },
+                    {
+                        title: "५. पुरावे जतन करा",
+                        list: [
+                            "ऑर्डर ID",
+                            "व्यवहार ID / UTR",
+                            "विक्रेत्याचे नाव किंवा प्रोफाइल",
+                            "वेबसाइट किंवा लिस्टिंगची लिंक",
+                            "चॅट आणि ईमेल",
+                            "स्क्रीनशॉट",
+                            "डिलिव्हरी किंवा रिफंड मेसेज"
+                        ]
+                    }
+                ]
+            },
+
+            hi: {
                 title: "ऑनलाइन शॉपिंग धोखाधड़ी",
-                subtitle: "विक्रेता, वेबसाइट, सामान या भुगतान संदिग्ध लगता है।",
-                important: "अगर साइबर धोखाधड़ी में पैसे चले गए हैं तो जल्द से जल्द 1930 पर कॉल करें।",
+                intro: "यदि ऑनलाइन विक्रेता, शॉपिंग वेबसाइट या रिफंड प्रक्रिया धोखाधड़ी जैसी लगे, तो आगे का भुगतान रोकें और ऑर्डर व लेनदेन के सबूत सुरक्षित रखें।",
+
                 sections: [
-                    ["1. आगे भुगतान रोकें", [
-                        "Refund, delivery fee या verification के नाम पर और पैसे न दें।",
-                        "OTP, PIN या बैंकिंग जानकारी साझा न करें।"
-                    ]],
-                    ["2. प्लेटफॉर्म से संपर्क करें", [
-                        "Official customer support या dispute option इस्तेमाल करें।",
-                        "फर्जी seller/listing को रिपोर्ट करें।",
-                        "Complaint/reference number सुरक्षित रखें।"
-                    ]],
-                    ["3. बैंक / पेमेंट सेवा से संपर्क करें", [
-                        "अनधिकृत या फर्जी transaction की जानकारी दें।",
-                        "उपलब्ध dispute प्रक्रिया के बारे में पूछें।"
-                    ]],
-                    ["4. पैसे चले गए हैं", [
-                        "तुरंत 1930 पर कॉल करें।",
-                        "National Cyber Crime Reporting Portal पर शिकायत करें।"
-                    ]],
-                    ["5. खरीदारी के सबूत सुरक्षित रखें", [
-                        "Order ID",
-                        "Transaction ID / UTR",
-                        "Seller name",
-                        "Seller profile",
-                        "Website/app URL",
-                        "Product listing",
-                        "Chats और emails",
-                        "Screenshots",
-                        "Delivery/refund messages"
-                    ]]
+                    {
+                        title: "1. आगे का भुगतान रोकें",
+                        text: "अतिरिक्त डिलीवरी, रिफंड, वेरिफिकेशन या प्रोसेसिंग फीस न दें। OTP, PIN या बैंकिंग जानकारी साझा न करें।"
+                    },
+                    {
+                        title: "2. प्लेटफॉर्म से संपर्क करें",
+                        text: "आधिकारिक कस्टमर सपोर्ट या डिस्प्यूट विकल्प का उपयोग करें। विक्रेता या लिस्टिंग को रिपोर्ट करें और शिकायत संदर्भ नंबर सुरक्षित रखें।"
+                    },
+                    {
+                        title: "3. बैंक या पेमेंट सेवा से संपर्क करें",
+                        text: "धोखाधड़ी या अनधिकृत लेनदेन की जानकारी दें और लागू डिस्प्यूट प्रक्रिया के बारे में पूछें।"
+                    },
+                    {
+                        title: "4. पैसे खो गए हों तो",
+                        text: "जितनी जल्दी हो सके 1930 पर कॉल करें और राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल पर शिकायत करें।"
+                    },
+                    {
+                        title: "5. सबूत सुरक्षित रखें",
+                        list: [
+                            "ऑर्डर ID",
+                            "लेनदेन ID / UTR",
+                            "विक्रेता का नाम या प्रोफाइल",
+                            "वेबसाइट या लिस्टिंग URL",
+                            "चैट और ईमेल",
+                            "स्क्रीनशॉट",
+                            "डिलीवरी या रिफंड संदेश"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           JOB SCAM
+           ================================================= */
+
+        job: {
+
+            en: {
+                title: "Fake Job / Work Scam",
+                intro: "Be careful with job offers that ask for money, sensitive information or urgent payments before employment.",
+
+                sections: [
+                    {
+                        title: "1. Stop payment",
+                        text: "Do not send more money. Do not share OTP, UPI PIN, password or unnecessary sensitive information."
+                    },
+                    {
+                        title: "2. Verify the offer",
+                        text: "Check the employer's official website and contact information. Do not rely only on a recruiter, WhatsApp message or forwarded advertisement."
+                    },
+                    {
+                        title: "3. Contact your bank or payment provider",
+                        text: "If you transferred money, immediately contact the bank or payment provider and report the fraudulent transaction."
+                    },
+                    {
+                        title: "4. Call 1930 if money was lost",
+                        text: "Call 1930 as soon as possible and then report the incident through the National Cyber Crime Reporting Portal."
+                    },
+                    {
+                        title: "5. Preserve evidence",
+                        list: [
+                            "Job advertisement",
+                            "Recruiter profile",
+                            "Phone number",
+                            "Email address",
+                            "Payment details",
+                            "Chats",
+                            "Website URL",
+                            "Screenshots"
+                        ]
+                    }
                 ]
             },
 
-            job: {
-                title: "फर्जी नौकरी / काम का घोटाला",
-                subtitle: "नौकरी के नाम पर पैसे, संवेदनशील जानकारी या असामान्य भुगतान मांगा जा रहा है।",
-                important: "नौकरी, इंटरव्यू या पक्के रोजगार के वादे पर सिर्फ इसलिए पैसे न दें क्योंकि कोई मांग रहा है।",
+            mr: {
+                title: "बनावट नोकरी / कामाची फसवणूक",
+                intro: "नोकरी मिळण्यापूर्वी पैसे, संवेदनशील माहिती किंवा तातडीने पेमेंट मागणाऱ्या नोकरीच्या ऑफरपासून सावध रहा.",
+
                 sections: [
-                    ["1. भुगतान रोकें", [
-                        "और पैसे न दें।",
-                        "OTP, PIN, पासवर्ड या अनावश्यक जानकारी साझा न करें।"
-                    ]],
-                    ["2. ऑफर की जांच करें", [
-                        "कंपनी की official website से जानकारी जांचें।",
-                        "केवल recruiter profile, WhatsApp message या forwarded advertisement पर भरोसा न करें।"
-                    ]],
-                    ["3. बैंक / पेमेंट सेवा से संपर्क करें", [
-                        "अगर पैसे भेजे हैं तो transaction की तुरंत जानकारी दें।"
-                    ]],
-                    ["4. पैसे चले गए हैं तो 1930 पर कॉल करें", [
-                        "साइबर वित्तीय धोखाधड़ी की जल्द रिपोर्ट करें।",
-                        "फिर National Cyber Crime Reporting Portal पर शिकायत करें।"
-                    ]],
-                    ["5. सबूत सुरक्षित रखें", [
-                        "Job advertisement",
-                        "Recruiter profile",
-                        "Phone number",
-                        "Email address",
-                        "Payment details",
-                        "Chats",
-                        "Website URL",
-                        "Screenshots"
-                    ]]
+                    {
+                        title: "१. पेमेंट थांबवा",
+                        text: "आणखी पैसे पाठवू नका. OTP, UPI PIN, पासवर्ड किंवा अनावश्यक संवेदनशील माहिती देऊ नका."
+                    },
+                    {
+                        title: "२. नोकरीची ऑफर तपासा",
+                        text: "कंपनीची अधिकृत वेबसाइट आणि संपर्क माहिती तपासा. फक्त रिक्रूटर, WhatsApp मेसेज किंवा फॉरवर्ड केलेल्या जाहिरातीवर विश्वास ठेवू नका."
+                    },
+                    {
+                        title: "३. बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करा",
+                        text: "पैसे ट्रान्सफर केले असल्यास ताबडतोब बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करून फसव्या व्यवहाराची माहिती द्या."
+                    },
+                    {
+                        title: "४. पैसे गमावले असल्यास 1930 वर कॉल करा",
+                        text: "शक्य तितक्या लवकर 1930 वर कॉल करा आणि त्यानंतर राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार करा."
+                    },
+                    {
+                        title: "५. पुरावे जतन करा",
+                        list: [
+                            "नोकरीची जाहिरात",
+                            "रिक्रूटर प्रोफाइल",
+                            "फोन नंबर",
+                            "ईमेल",
+                            "पेमेंटची माहिती",
+                            "चॅट",
+                            "वेबसाइट लिंक",
+                            "स्क्रीनशॉट"
+                        ]
+                    }
                 ]
             },
 
-            phone: {
-                title: "मोबाइल खो गया / चोरी हो गया",
-                subtitle: "मोबाइल खोजें, लॉक करें और फोन, अकाउंट और मोबाइल नंबर सुरक्षित करें।",
-                important: "जल्दी कार्रवाई करें। खोए हुए फोन में व्यक्तिगत, बैंकिंग और अकाउंट की जानकारी हो सकती है।",
+            hi: {
+                title: "फर्जी नौकरी / काम की धोखाधड़ी",
+                intro: "नौकरी मिलने से पहले पैसे, संवेदनशील जानकारी या तुरंत भुगतान मांगने वाले जॉब ऑफर से सावधान रहें।",
+
                 sections: [
-                    ["1. 🔎 मोबाइल खोजने की कोशिश करें", [
-                        "Android → Google Find Hub / Find My Device इस्तेमाल करें।",
-                        "iPhone → Apple Find My इस्तेमाल करें।",
-                        "उपलब्ध होने पर Locate, Play Sound या Mark as Lost इस्तेमाल करें।",
-                        "अगर नक्शे पर अनजान जगह दिखाई दे तो खुद वहां जाकर सामना न करें।"
-                    ]],
-                    ["2. 🔒 फोन लॉक करें", [
-                        "Official Find Hub या Find My service इस्तेमाल करें।",
-                        "उपलब्ध होने पर device को Lost के रूप में mark करें।",
-                        "जरूरत हो तो contact message जोड़ें।"
-                    ]],
-                    ["3. 📞 SIM सुरक्षित करें", [
-                        "अपने mobile operator से संपर्क करें।",
-                        "SIM block / replacement मांगें।",
-                        "अपना मोबाइल नंबर सुरक्षित रखें।"
-                    ]],
-                    ["4. 🔐 जरूरी अकाउंट सुरक्षित करें", [
-                        "महत्वपूर्ण अकाउंट के passwords बदलें।",
-                        "जहां संभव हो खोए हुए device से sign out करें।",
-                        "बैंकिंग, ईमेल और सोशल मीडिया अकाउंट सुरक्षित करें।",
-                        "बैंक और UPI transactions जांचें।"
-                    ]],
-                    ["5. 👮 मोबाइल खोने की रिपोर्ट करें", [
-                        "खोए या चोरी हुए मोबाइल की police complaint/report करें।",
-                        "Complaint details सुरक्षित रखें।"
-                    ]],
-                    ["6. 📵 CEIR से IMEI ब्लॉक करें", [
-                        "Official CEIR / Sanchar Saathi service इस्तेमाल करें।",
-                        "अगर उपलब्ध है तो IMEI number तैयार रखें।",
-                        "जरूरी police report और identity documents तैयार रखें।",
-                        "Request ID सुरक्षित रखें।"
-                    ]],
-                    ["7. 💳 अगर पैसे चोरी हुए", [
-                        "बैंक / पेमेंट सेवा से तुरंत संपर्क करें।",
-                        "1930 पर कॉल करें।",
-                        "National Cyber Crime Reporting Portal पर शिकायत करें।"
-                    ]]
+                    {
+                        title: "1. भुगतान रोकें",
+                        text: "और पैसे न भेजें। OTP, UPI PIN, पासवर्ड या अनावश्यक संवेदनशील जानकारी साझा न करें।"
+                    },
+                    {
+                        title: "2. ऑफर की जांच करें",
+                        text: "कंपनी की आधिकारिक वेबसाइट और संपर्क जानकारी जांचें। केवल रिक्रूटर, WhatsApp संदेश या फॉरवर्ड किए गए विज्ञापन पर भरोसा न करें।"
+                    },
+                    {
+                        title: "3. बैंक या पेमेंट सेवा से संपर्क करें",
+                        text: "यदि आपने पैसे ट्रांसफर किए हैं, तो तुरंत बैंक या पेमेंट सेवा से संपर्क करके धोखाधड़ी वाले लेनदेन की जानकारी दें।"
+                    },
+                    {
+                        title: "4. पैसे खो गए हों तो 1930 पर कॉल करें",
+                        text: "जितनी जल्दी हो सके 1930 पर कॉल करें और उसके बाद राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल पर शिकायत करें।"
+                    },
+                    {
+                        title: "5. सबूत सुरक्षित रखें",
+                        list: [
+                            "नौकरी का विज्ञापन",
+                            "रिक्रूटर प्रोफाइल",
+                            "फोन नंबर",
+                            "ईमेल",
+                            "पेमेंट विवरण",
+                            "चैट",
+                            "वेबसाइट URL",
+                            "स्क्रीनशॉट"
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+
+        /* =================================================
+           LOST / STOLEN MOBILE
+           ================================================= */
+
+        phone: {
+
+            en: {
+                title: "Lost / Stolen Mobile",
+                intro: "If your phone is lost or stolen, secure the device, SIM and important accounts as quickly as possible.",
+
+                sections: [
+                    {
+                        title: "1. Try to find the phone",
+                        text: "Android users can use Google Find Hub / Find My Device. iPhone users can use Apple Find My. You may be able to locate the device, play a sound or mark it as lost. Do not confront an unfamiliar person at a location shown on the map."
+                    },
+                    {
+                        title: "2. Lock the phone",
+                        text: "Use the official device-finding service to lock or mark the phone as lost and display a contact message where available."
+                    },
+                    {
+                        title: "3. Secure your SIM",
+                        text: "Contact your mobile operator and request blocking or replacement of the SIM as appropriate."
+                    },
+                    {
+                        title: "4. Secure your accounts",
+                        text: "Change important passwords and sign out the lost device where possible. Pay special attention to banking, email and social media accounts. Monitor bank and UPI activity."
+                    },
+                    {
+                        title: "5. Report the loss",
+                        text: "Make a police complaint or report the loss as appropriate and keep the relevant details."
+                    },
+                    {
+                        title: "6. Block the IMEI through CEIR",
+                        text: "Use the official CEIR / Sanchar Saathi service to request IMEI blocking. Keep the IMEI, police report and required identity documents ready. Save the Request ID after submission."
+                    },
+                    {
+                        title: "7. If money was stolen",
+                        text: "Contact your bank or payment provider, call 1930 and report the incident through the National Cyber Crime Reporting Portal."
+                    }
+                ]
+            },
+
+            mr: {
+                title: "हरवलेला / चोरीला गेलेला मोबाईल",
+                intro: "मोबाईल हरवला किंवा चोरीला गेल्यास शक्य तितक्या लवकर मोबाईल, SIM आणि महत्त्वाची खाती सुरक्षित करा.",
+
+                sections: [
+                    {
+                        title: "१. मोबाईल शोधण्याचा प्रयत्न करा",
+                        text: "Android वापरकर्ते Google Find Hub / Find My Device वापरू शकतात. iPhone वापरकर्ते Apple Find My वापरू शकतात. उपलब्ध सुविधेनुसार मोबाईलचे स्थान पाहणे, आवाज वाजवणे किंवा तो Lost म्हणून मार्क करणे शक्य आहे. नकाशावर दिसणाऱ्या अनोळखी ठिकाणी स्वतः जाऊन संबंधित व्यक्तीशी सामना करू नका."
+                    },
+                    {
+                        title: "२. मोबाईल लॉक करा",
+                        text: "अधिकृत डिव्हाइस शोध सेवेद्वारे मोबाईल लॉक करा किंवा Lost म्हणून मार्क करा. उपलब्ध असल्यास संपर्कासाठी मेसेज दाखवा."
+                    },
+                    {
+                        title: "३. SIM सुरक्षित करा",
+                        text: "तुमच्या मोबाईल ऑपरेटरशी संपर्क करून आवश्यकतेनुसार SIM ब्लॉक किंवा रिप्लेस करण्याची विनंती करा."
+                    },
+                    {
+                        title: "४. तुमची खाती सुरक्षित करा",
+                        text: "महत्त्वाचे पासवर्ड बदला आणि शक्य असल्यास हरवलेल्या डिव्हाइसमधून साइन आउट करा. विशेषतः बँकिंग, ईमेल आणि सोशल मीडिया खाती तपासा. बँक आणि UPI व्यवहारांवर लक्ष ठेवा."
+                    },
+                    {
+                        title: "५. मोबाईल हरवल्याची तक्रार करा",
+                        text: "योग्य पद्धतीने पोलीस तक्रार किंवा हरवल्याची नोंद करा आणि संबंधित माहिती जतन करा."
+                    },
+                    {
+                        title: "६. CEIR द्वारे IMEI ब्लॉक करा",
+                        text: "अधिकृत CEIR / Sanchar Saathi सेवेद्वारे IMEI ब्लॉक करण्याची विनंती करा. IMEI, पोलीस तक्रार आणि आवश्यक ओळखपत्र तयार ठेवा. अर्ज केल्यानंतर Request ID जतन करा."
+                    },
+                    {
+                        title: "७. पैसे चोरीला गेले असल्यास",
+                        text: "बँक किंवा पेमेंट सेवा प्रदात्याशी संपर्क करा, 1930 वर कॉल करा आणि राष्ट्रीय सायबर क्राईम रिपोर्टिंग पोर्टलवर तक्रार करा."
+                    }
+                ]
+            },
+
+            hi: {
+                title: "खोया / चोरी हुआ मोबाइल",
+                intro: "यदि मोबाइल खो गया या चोरी हो गया है, तो जितनी जल्दी हो सके मोबाइल, SIM और महत्वपूर्ण खातों को सुरक्षित करें।",
+
+                sections: [
+                    {
+                        title: "1. मोबाइल खोजने की कोशिश करें",
+                        text: "Android उपयोगकर्ता Google Find Hub / Find My Device का उपयोग कर सकते हैं। iPhone उपयोगकर्ता Apple Find My का उपयोग कर सकते हैं। उपलब्ध सुविधा के अनुसार मोबाइल की लोकेशन देखना, आवाज बजाना या उसे Lost के रूप में मार्क करना संभव हो सकता है। नक्शे पर दिखाई गई किसी अनजान जगह पर खुद जाकर व्यक्ति का सामना न करें।"
+                    },
+                    {
+                        title: "2. मोबाइल लॉक करें",
+                        text: "आधिकारिक डिवाइस-फाइंडिंग सेवा से मोबाइल लॉक करें या Lost के रूप में मार्क करें। उपलब्ध होने पर संपर्क संदेश भी दिखा सकते हैं।"
+                    },
+                    {
+                        title: "3. SIM सुरक्षित करें",
+                        text: "अपने मोबाइल ऑपरेटर से संपर्क करें और आवश्यकता के अनुसार SIM ब्लॉक या रिप्लेस करने का अनुरोध करें।"
+                    },
+                    {
+                        title: "4. अपने खातों को सुरक्षित करें",
+                        text: "महत्वपूर्ण पासवर्ड बदलें और संभव हो तो खोए हुए डिवाइस से साइन आउट करें। बैंकिंग, ईमेल और सोशल मीडिया खातों पर विशेष ध्यान दें। बैंक और UPI गतिविधि पर नजर रखें।"
+                    },
+                    {
+                        title: "5. मोबाइल खोने की रिपोर्ट करें",
+                        text: "उचित तरीके से पुलिस शिकायत या मोबाइल खोने की रिपोर्ट करें और संबंधित विवरण सुरक्षित रखें।"
+                    },
+                    {
+                        title: "6. CEIR के माध्यम से IMEI ब्लॉक करें",
+                        text: "आधिकारिक CEIR / Sanchar Saathi सेवा के माध्यम से IMEI ब्लॉक करने का अनुरोध करें। IMEI, पुलिस रिपोर्ट और आवश्यक पहचान दस्तावेज तैयार रखें। आवेदन के बाद Request ID सुरक्षित रखें।"
+                    },
+                    {
+                        title: "7. पैसे चोरी हुए हों तो",
+                        text: "बैंक या पेमेंट सेवा से संपर्क करें, 1930 पर कॉल करें और राष्ट्रीय साइबर क्राइम रिपोर्टिंग पोर्टल पर शिकायत करें।"
+                    }
                 ]
             }
 
@@ -1608,20 +1711,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       PAGE TRANSLATION FUNCTION
+       LANGUAGE TRANSLATION FUNCTION
        ===================================================== */
 
     function translatePage() {
 
         const language =
-            translations[currentLanguage];
-
-        if (!language) {
-            return;
-        }
+            translations[currentLanguage] || translations.en;
 
         document.documentElement.lang =
             currentLanguage;
+
+        document.body.classList.toggle(
+            "devanagari",
+            currentLanguage === "mr" ||
+            currentLanguage === "hi"
+        );
 
 
         document
@@ -1631,19 +1736,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 const key =
                     element.getAttribute("data-i18n");
 
-                if (language[key] !== undefined) {
-
-                    element.innerHTML =
+                if (language[key]) {
+                    element.textContent =
                         language[key];
-
                 }
 
             });
 
-        localStorage.setItem(
-            "nirbhay_language",
-            currentLanguage
-        );
+
+        updateStatisticsUI();
+
+
+        const table =
+            document.getElementById("sectionViewsTable");
+
+        const button =
+            document.getElementById("sectionViewsBtn");
+
+        if (table && button) {
+
+            const isHidden =
+                table.classList.contains("hidden");
+
+            button.textContent =
+                isHidden
+                    ? language.viewSectionViews
+                    : language.hideSectionViews;
+
+        }
+
     }
 
 
@@ -1659,146 +1780,110 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
+
     }
 
 
     /* =====================================================
-       GUIDE ACTION BUTTONS
+       GET ACTION BUTTONS
        ===================================================== */
 
     function getActions(type) {
 
+        const language = currentLanguage;
+
+        if (type === "money") {
+
+            return `
+                <a class="btn btn-danger"
+                   href="${LINKS.helpline}">
+                    ${
+                        language === "mr"
+                            ? "1930 वर कॉल करा"
+                            : language === "hi"
+                                ? "1930 पर कॉल करें"
+                                : "Call 1930"
+                    }
+                </a>
+
+                <a class="btn btn-primary"
+                   href="${LINKS.cyberCrime}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${
+                        language === "mr"
+                            ? "ऑनलाइन तक्रार करा"
+                            : language === "hi"
+                                ? "ऑनलाइन रिपोर्ट करें"
+                                : "Report Online"
+                    }
+                </a>
+            `;
+
+        }
+
+
         if (type === "phone") {
 
-            return [
+            return `
+                <a class="btn btn-primary"
+                   href="${LINKS.android}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${
+                        language === "mr"
+                            ? "Android शोधा"
+                            : language === "hi"
+                                ? "Android खोजें"
+                                : "Find Android"
+                    }
+                </a>
 
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "🔎 Android शोधा"
-                            : currentLanguage === "hi"
-                                ? "🔎 Android खोजें"
-                                : "🔎 Find Android",
+                <a class="btn btn-primary"
+                   href="${LINKS.iphone}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${
+                        language === "mr"
+                            ? "iPhone शोधा"
+                            : language === "hi"
+                                ? "iPhone खोजें"
+                                : "Find iPhone"
+                    }
+                </a>
 
-                    url: LINKS.android
-                },
+                <a class="btn btn-secondary"
+                   href="${LINKS.ceir}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${
+                        language === "mr"
+                            ? "CEIR उघडा"
+                            : language === "hi"
+                                ? "CEIR खोलें"
+                                : "Open CEIR"
+                    }
+                </a>
+            `;
 
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "🍎 iPhone शोधा"
-                            : currentLanguage === "hi"
-                                ? "🍎 iPhone खोजें"
-                                : "🍎 Find iPhone",
-
-                    url: LINKS.iphone
-                },
-
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "📵 CEIR"
-                            : currentLanguage === "hi"
-                                ? "📵 CEIR"
-                                : "📵 CEIR",
-
-                    url: LINKS.ceir
-                },
-
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "📞 1930"
-                            : currentLanguage === "hi"
-                                ? "📞 1930"
-                                : "📞 Call 1930",
-
-                    url: LINKS.helpline
-                }
-
-            ];
         }
 
 
-        if (
-            type === "money" ||
-            type === "otp" ||
-            type === "shopping" ||
-            type === "job"
-        ) {
-
-            return [
-
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "📞 1930 वर कॉल करा"
-                            : currentLanguage === "hi"
-                                ? "📞 1930 पर कॉल करें"
-                                : "📞 Call 1930",
-
-                    url: LINKS.helpline
-                },
-
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "🌐 सायबर तक्रार"
-                            : currentLanguage === "hi"
-                                ? "🌐 साइबर रिपोर्ट करें"
-                                : "🌐 Report Cybercrime",
-
-                    url: LINKS.cyberCrime
+        return `
+            <a class="btn btn-primary"
+               href="${LINKS.cyberCrime}"
+               target="_blank"
+               rel="noopener noreferrer">
+                ${
+                    language === "mr"
+                        ? "सायबर क्राईम पोर्टल"
+                        : language === "hi"
+                            ? "साइबर क्राइम पोर्टल"
+                            : "Cyber Crime Portal"
                 }
+            </a>
+        `;
 
-            ];
-        }
-
-
-        if (type === "harassment") {
-
-            return [
-
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "🚨 आपत्कालीन 112"
-                            : currentLanguage === "hi"
-                                ? "🚨 आपातकाल 112"
-                                : "🚨 Emergency 112",
-
-                    url: LINKS.emergency
-                },
-
-                {
-                    text:
-                        currentLanguage === "mr"
-                            ? "🌐 सायबर तक्रार"
-                            : currentLanguage === "hi"
-                                ? "🌐 साइबर रिपोर्ट करें"
-                                : "🌐 Report Cybercrime",
-
-                    url: LINKS.cyberCrime
-                }
-
-            ];
-        }
-
-
-        return [
-
-            {
-                text:
-                    currentLanguage === "mr"
-                        ? "🌐 सायबर तक्रार"
-                        : currentLanguage === "hi"
-                            ? "🌐 साइबर रिपोर्ट करें"
-                            : "🌐 Report Cybercrime",
-
-                url: LINKS.cyberCrime
-            }
-
-        ];
     }
 
 
@@ -1808,319 +1893,252 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showGuide(type) {
 
-        const language =
-            guideTranslations[currentLanguage];
-
         const guide =
-            language?.[type];
+            guideTranslations[type]?.[currentLanguage] ||
+            guideTranslations[type]?.en;
 
-        const guideModal =
-            document.getElementById("guideModal");
-
-        const guideContent =
-            document.getElementById("guideContent");
-
-        if (!guide || !guideModal || !guideContent) {
+        if (!guide) {
             return;
         }
 
 
+        const modal =
+            document.getElementById("guideModal");
+
+        const content =
+            document.getElementById("guideContent");
+
+
         let html = `
 
-            <div class="guide-header">
-
-                <div class="guide-label">
-                    ${currentLanguage === "mr"
-                        ? "NIRBHAYSETU मार्गदर्शित कृती"
-                        : currentLanguage === "hi"
-                            ? "NIRBHAYSETU निर्देशित कार्रवाई"
-                            : "NIRBHAYSETU GUIDED ACTION"}
-                </div>
-
-                <h1>
-                    ${escapeHTML(guide.title)}
-                </h1>
-
-                <p>
-                    ${escapeHTML(guide.subtitle)}
-                </p>
-
+            <div class="guide-kicker">
+                NIRBHAYSETU • CYBER SAFETY GUIDE
             </div>
 
-        `;
+            <h2 class="guide-title">
+                ${escapeHTML(guide.title)}
+            </h2>
 
-
-        html += `
-
-            <div class="guide-important">
-
-                <h2>
-                    🚨 ${
-                        currentLanguage === "mr"
-                            ? "महत्त्वाचे"
-                            : currentLanguage === "hi"
-                                ? "महत्वपूर्ण"
-                                : "Important"
-                    }
-                </h2>
-
-                <p>
-                    ${escapeHTML(guide.important)}
-                </p>
-
+            <div class="guide-intro">
+                ${escapeHTML(guide.intro)}
             </div>
-
         `;
 
 
         guide.sections.forEach(section => {
 
             html += `
-
                 <div class="guide-section">
 
-                    <h2>
-                        ${escapeHTML(section[0])}
-                    </h2>
-
-                    <ul>
+                    <h3>
+                        ${escapeHTML(section.title)}
+                    </h3>
             `;
 
 
-            section[1].forEach(item => {
+            if (section.text) {
 
                 html += `
-
-                    <li>
-                        ${escapeHTML(item)}
-                    </li>
-
+                    <p>
+                        ${escapeHTML(section.text)}
+                    </p>
                 `;
 
-            });
+            }
+
+
+            if (section.list) {
+
+                html += "<ul>";
+
+                section.list.forEach(item => {
+
+                    html += `
+                        <li>
+                            ${escapeHTML(item)}
+                        </li>
+                    `;
+
+                });
+
+                html += "</ul>";
+            }
 
 
             html += `
-
-                    </ul>
-
                 </div>
-
             `;
 
         });
 
 
-        const actions =
-            getActions(type);
-
-
         html += `
-
             <div class="guide-actions">
-
-                <h2>
-                    ${
-                        currentLanguage === "mr"
-                            ? "⚡ जलद कृती"
-                            : currentLanguage === "hi"
-                                ? "⚡ तुरंत कार्रवाई"
-                                : "⚡ Quick Actions"
-                    }
-                </h2>
-
-                <div class="action-buttons">
-
-        `;
-
-
-        actions.forEach(action => {
-
-            html += `
-
-                <a
-                    class="guide-action-btn"
-                    href="${escapeHTML(action.url)}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    ${escapeHTML(action.text)}
-
-                </a>
-
-            `;
-
-        });
-
-
-        html += `
-
-                </div>
-
+                ${getActions(type)}
             </div>
-
         `;
 
 
-        guideContent.innerHTML =
-            html;
+        content.innerHTML = html;
 
-        guideModal.classList.add("active");
 
-        guideModal.setAttribute(
+        modal.classList.add("open");
+
+        modal.setAttribute(
             "aria-hidden",
             "false"
         );
 
-        document.body.style.overflow =
-            "hidden";
+        document.body.style.overflow = "hidden";
+
     }
 
 
     /* =====================================================
-       CLOSE MODALS
+       CLOSE GUIDE
        ===================================================== */
 
-    function closeModal(modal) {
+    function closeGuide() {
 
-        if (!modal) {
-            return;
-        }
+        const modal =
+            document.getElementById("guideModal");
 
-        modal.classList.remove("active");
+        modal.classList.remove("open");
 
         modal.setAttribute(
             "aria-hidden",
             "true"
         );
 
-        document.body.style.overflow =
-            "";
+        document.body.style.overflow = "";
+
     }
 
 
-    const helpModal =
-        document.getElementById("helpModal");
-
-    const guideModal =
-        document.getElementById("guideModal");
-
-    const helpNowBtn =
-        document.getElementById("helpNowBtn");
-
-    const closeHelpModal =
-        document.getElementById("closeHelpModal");
-
-    const closeGuideModal =
-        document.getElementById("closeGuideModal");
-
-
-    helpNowBtn.addEventListener(
-        "click",
-        () => {
-
-            helpModal.classList.add("active");
-
-            helpModal.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-            document.body.style.overflow =
-                "hidden";
-        }
-    );
-
-
-    closeHelpModal.addEventListener(
-        "click",
-        () => closeModal(helpModal)
-    );
-
-
-    closeGuideModal.addEventListener(
-        "click",
-        () => closeModal(guideModal)
-    );
-
-
-    window.addEventListener(
-        "click",
-        event => {
-
-            if (event.target === helpModal) {
-                closeModal(helpModal);
-            }
-
-            if (event.target === guideModal) {
-                closeModal(guideModal);
-            }
-
-        }
-    );
-
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (event.key === "Escape") {
-
-                closeModal(helpModal);
-                closeModal(guideModal);
-
-            }
-
-        }
-    );
-
-
     /* =====================================================
-       SITUATION CARDS
+       GUIDE CARD EVENTS
        ===================================================== */
 
     document
-        .querySelectorAll("[data-guide]")
+        .querySelectorAll(".situation-card")
         .forEach(card => {
 
-            card.addEventListener(
-                "click",
-                () => {
+            card.addEventListener("click", () => {
 
-                    showGuide(
-                        card.dataset.guide
-                    );
+                const guideType =
+                    card.dataset.guide;
+
+                countSectionView(guideType);
+
+                showGuide(guideType);
+
+            });
+
+
+            card.addEventListener("keydown", event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    const guideType =
+                        card.dataset.guide;
+
+                    countSectionView(guideType);
+
+                    showGuide(guideType);
 
                 }
-            );
 
-
-            card.addEventListener(
-                "keydown",
-                event => {
-
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
-
-                        event.preventDefault();
-
-                        showGuide(
-                            card.dataset.guide
-                        );
-
-                    }
-
-                }
-            );
+            });
 
         });
 
 
     /* =====================================================
+       GUIDE MODAL EVENTS
+       ===================================================== */
+
+    document
+        .getElementById("guideClose")
+        .addEventListener(
+            "click",
+            closeGuide
+        );
+
+
+    document
+        .querySelector("#guideModal .modal-overlay")
+        .addEventListener(
+            "click",
+            closeGuide
+        );
+
+
+    /* =====================================================
+       HELP MODAL
+       ===================================================== */
+
+    function openHelpModal() {
+
+        const modal =
+            document.getElementById("helpModal");
+
+        modal.classList.add("open");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeHelpModal() {
+
+        const modal =
+            document.getElementById("helpModal");
+
+        modal.classList.remove("open");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    document
+        .getElementById("helpClose")
+        .addEventListener(
+            "click",
+            closeHelpModal
+        );
+
+
+    document
+        .querySelector("#helpModal .modal-overlay")
+        .addEventListener(
+            "click",
+            closeHelpModal
+        );
+
+
+    /* =====================================================
        LANGUAGE SELECTOR
        ===================================================== */
+
+    languageSelect.value =
+        currentLanguage;
+
 
     languageSelect.addEventListener(
         "change",
@@ -2128,6 +2146,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             currentLanguage =
                 event.target.value;
+
+            localStorage.setItem(
+                "nirbhay_language",
+                currentLanguage
+            );
 
             translatePage();
 
@@ -2144,14 +2167,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const savedTextSize =
         localStorage.getItem(
-            "nirbhay_large_text"
-        ) === "true";
+            "nirbhay_text_size"
+        );
 
 
-    if (savedTextSize) {
+    if (savedTextSize === "large") {
+
         document.body.classList.add(
             "large-text"
         );
+
     }
 
 
@@ -2159,15 +2184,544 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
 
-            const enabled =
-                document.body.classList.toggle(
+            document.body.classList.toggle(
+                "large-text"
+            );
+
+            const isLarge =
+                document.body.classList.contains(
                     "large-text"
                 );
 
             localStorage.setItem(
-                "nirbhay_large_text",
-                enabled
+                "nirbhay_text_size",
+                isLarge
+                    ? "large"
+                    : "normal"
             );
+
+        }
+    );
+
+
+    /* =====================================================
+       WEBSITE STATISTICS
+       ===================================================== */
+
+    const STAT_STORAGE_KEY =
+        "nirbhaysetu_statistics";
+
+    const VISITOR_SESSION_KEY =
+        "nirbhaysetu_visitor_counted";
+
+
+    const sectionNames = {
+
+        money: {
+            en: "Money Lost",
+            mr: "पैसे गमावले",
+            hi: "पैसे खो गए"
+        },
+
+        otp: {
+            en: "Fake Call / OTP",
+            mr: "बनावट कॉल / OTP",
+            hi: "फर्जी कॉल / OTP"
+        },
+
+        suspicious: {
+            en: "Suspicious Link",
+            mr: "संशयास्पद लिंक",
+            hi: "संदिग्ध लिंक"
+        },
+
+        social: {
+            en: "Social Account Hacked",
+            mr: "सोशल मीडिया खाते हॅक",
+            hi: "सोशल मीडिया अकाउंट हैक"
+        },
+
+        harassment: {
+            en: "Online Harassment",
+            mr: "ऑनलाइन छळ",
+            hi: "ऑनलाइन उत्पीड़न"
+        },
+
+        identity: {
+            en: "Fake Profile",
+            mr: "बनावट प्रोफाइल",
+            hi: "फर्जी प्रोफाइल"
+        },
+
+        shopping: {
+            en: "Shopping Fraud",
+            mr: "ऑनलाइन खरेदी फसवणूक",
+            hi: "ऑनलाइन शॉपिंग धोखाधड़ी"
+        },
+
+        job: {
+            en: "Fake Job Scam",
+            mr: "बनावट नोकरी फसवणूक",
+            hi: "फर्जी नौकरी धोखाधड़ी"
+        },
+
+        phone: {
+            en: "Lost / Stolen Mobile",
+            mr: "हरवलेला / चोरीला गेलेला मोबाईल",
+            hi: "खोया / चोरी हुआ मोबाइल"
+        }
+
+    };
+
+
+    const defaultStatistics = {
+
+        visitors: 0,
+
+        sections: {
+
+            money: 0,
+            otp: 0,
+            suspicious: 0,
+            social: 0,
+            harassment: 0,
+            identity: 0,
+            shopping: 0,
+            job: 0,
+            phone: 0
+
+        }
+
+    };
+
+
+    function createDefaultStatistics() {
+
+        return {
+            visitors: 0,
+
+            sections: {
+                ...defaultStatistics.sections
+            }
+        };
+
+    }
+
+
+    function getStatistics() {
+
+        try {
+
+            const saved =
+                localStorage.getItem(
+                    STAT_STORAGE_KEY
+                );
+
+
+            if (!saved) {
+
+                return createDefaultStatistics();
+
+            }
+
+
+            const parsed =
+                JSON.parse(saved);
+
+
+            return {
+
+                visitors:
+                    Number(parsed.visitors) || 0,
+
+                sections: {
+
+                    ...defaultStatistics.sections,
+
+                    ...(parsed.sections || {})
+
+                }
+
+            };
+
+        } catch (error) {
+
+            return createDefaultStatistics();
+
+        }
+
+    }
+
+
+    function saveStatistics(stats) {
+
+        try {
+
+            localStorage.setItem(
+                STAT_STORAGE_KEY,
+                JSON.stringify(stats)
+            );
+
+        } catch (error) {
+
+            console.warn(
+                "Statistics could not be saved.",
+                error
+            );
+
+        }
+
+    }
+
+
+    function formatStatNumber(number) {
+
+        return String(
+            Number(number) || 0
+        ).padStart(3, "0");
+
+    }
+
+
+    function updateStatisticsUI() {
+
+        const stats =
+            getStatistics();
+
+
+        const visitorCount =
+            document.getElementById(
+                "visitorCount"
+            );
+
+        const statsVisitors =
+            document.getElementById(
+                "statsVisitors"
+            );
+
+        const totalSectionViews =
+            document.getElementById(
+                "totalSectionViews"
+            );
+
+        const mostViewedSection =
+            document.getElementById(
+                "mostViewedSection"
+            );
+
+        const mostViewedCount =
+            document.getElementById(
+                "mostViewedCount"
+            );
+
+
+        /* -----------------------------------------------
+           VISITOR COUNT
+           ----------------------------------------------- */
+
+        if (visitorCount) {
+
+            visitorCount.textContent =
+                formatStatNumber(
+                    stats.visitors
+                );
+
+        }
+
+
+        if (statsVisitors) {
+
+            statsVisitors.textContent =
+                formatStatNumber(
+                    stats.visitors
+                );
+
+        }
+
+
+        /* -----------------------------------------------
+           TOTAL SECTION VIEWS
+           ----------------------------------------------- */
+
+        const totalViews =
+            Object.values(stats.sections)
+                .reduce(
+                    (sum, value) =>
+                        sum + (Number(value) || 0),
+                    0
+                );
+
+
+        if (totalSectionViews) {
+
+            totalSectionViews.textContent =
+                formatStatNumber(
+                    totalViews
+                );
+
+        }
+
+
+        /* -----------------------------------------------
+           MOST VIEWED SECTION
+           ----------------------------------------------- */
+
+        let mostViewedType = null;
+
+        let highestViews = 0;
+
+
+        Object.keys(stats.sections)
+            .forEach(type => {
+
+                const views =
+                    Number(
+                        stats.sections[type]
+                    ) || 0;
+
+
+                if (views > highestViews) {
+
+                    highestViews =
+                        views;
+
+                    mostViewedType =
+                        type;
+
+                }
+
+            });
+
+
+        if (mostViewedSection) {
+
+            if (mostViewedType) {
+
+                mostViewedSection.textContent =
+                    sectionNames[
+                        mostViewedType
+                    ][currentLanguage];
+
+            } else {
+
+                mostViewedSection.textContent =
+                    currentLanguage === "mr"
+                        ? "अद्याप माहिती नाही"
+                        : currentLanguage === "hi"
+                            ? "अभी कोई डेटा नहीं"
+                            : "No data yet";
+
+            }
+
+        }
+
+
+        if (mostViewedCount) {
+
+            if (currentLanguage === "mr") {
+
+                mostViewedCount.textContent =
+                    `${highestViews} पाहणी`;
+
+            } else if (currentLanguage === "hi") {
+
+                mostViewedCount.textContent =
+                    `${highestViews} व्यू`;
+
+            } else {
+
+                mostViewedCount.textContent =
+                    `${highestViews} ${
+                        highestViews === 1
+                            ? "view"
+                            : "views"
+                    }`;
+
+            }
+
+        }
+
+
+        /* -----------------------------------------------
+           INDIVIDUAL SECTION VIEWS
+           ----------------------------------------------- */
+
+        Object.keys(sectionNames)
+            .forEach(type => {
+
+                const element =
+                    document.getElementById(
+                        `view-${type}`
+                    );
+
+
+                if (element) {
+
+                    element.textContent =
+                        formatStatNumber(
+                            stats.sections[type]
+                        );
+
+                }
+
+            });
+
+    }
+
+
+    /* =====================================================
+       COUNT VISITOR
+       ===================================================== */
+
+    function countVisitor() {
+
+        try {
+
+            if (
+                sessionStorage.getItem(
+                    VISITOR_SESSION_KEY
+                ) === "true"
+            ) {
+
+                return;
+
+            }
+
+
+            const stats =
+                getStatistics();
+
+
+            stats.visitors += 1;
+
+
+            saveStatistics(stats);
+
+
+            sessionStorage.setItem(
+                VISITOR_SESSION_KEY,
+                "true"
+            );
+
+        } catch (error) {
+
+            console.warn(
+                "Visitor count could not be recorded.",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       COUNT SECTION VIEW
+       ===================================================== */
+
+    function countSectionView(type) {
+
+        if (!sectionNames[type]) {
+
+            return;
+
+        }
+
+
+        const stats =
+            getStatistics();
+
+
+        stats.sections[type] =
+            (Number(
+                stats.sections[type]
+            ) || 0) + 1;
+
+
+        saveStatistics(stats);
+
+        updateStatisticsUI();
+
+    }
+
+
+    /* =====================================================
+       SECTION VIEWS SHOW / HIDE
+       ===================================================== */
+
+    const sectionViewsBtn =
+        document.getElementById(
+            "sectionViewsBtn"
+        );
+
+    const sectionViewsTable =
+        document.getElementById(
+            "sectionViewsTable"
+        );
+
+
+    if (
+        sectionViewsBtn &&
+        sectionViewsTable
+    ) {
+
+        sectionViewsBtn.addEventListener(
+            "click",
+            () => {
+
+                const isHidden =
+                    sectionViewsTable.classList
+                        .contains("hidden");
+
+
+                if (isHidden) {
+
+                    sectionViewsTable.classList
+                        .remove("hidden");
+
+                    sectionViewsBtn
+                        .setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+
+                } else {
+
+                    sectionViewsTable.classList
+                        .add("hidden");
+
+                    sectionViewsBtn
+                        .setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                }
+
+
+                translatePage();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESC KEY — CLOSE MODALS
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+
+            closeGuide();
+            closeHelpModal();
 
         }
     );
@@ -2176,6 +2730,10 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =====================================================
        INITIALIZE
        ===================================================== */
+
+    countVisitor();
+
+    updateStatisticsUI();
 
     translatePage();
 
