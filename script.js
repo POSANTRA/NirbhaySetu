@@ -2850,56 +2850,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* =====================================================
-       LANGUAGE SELECTOR
-       ===================================================== */
+/* =====================================================
+   LANGUAGE SELECTOR
+   ===================================================== */
 
-    if (
-        languageSelect
-    ) {
+if (languageSelect) {
 
-        languageSelect.value =
-            currentLanguage;
+    languageSelect.value = currentLanguage;
 
+    languageSelect.addEventListener(
+        "change",
+        async event => {
 
-        languageSelect.addEventListener(
-            "change",
-            event => {
+            const selected = event.target.value;
 
-                const selected =
-                    event.target.value;
-
-
-                if (
-                    supportedLanguages.includes(
-                        selected
-                    )
-                ) {
-
-                    currentLanguage =
-                        selected;
-
-                } else {
-
-                    currentLanguage =
-                        "en";
-
-                }
-
-
-                localStorage.setItem(
-                    "nirbhay_language",
-                    currentLanguage
-                );
-
-
-                translatePage();
-
+            if (
+                supportedLanguages.includes(selected)
+            ) {
+                currentLanguage = selected;
+            } else {
+                currentLanguage = "en";
             }
-        );
 
-    }
+            localStorage.setItem(
+                "nirbhay_language",
+                currentLanguage
+            );
 
+            /* Change language immediately */
+            translatePage();
+
+            /* Fetch latest statistics from Supabase */
+            const latestStats =
+                await loadSharedStatistics();
+
+            /* Update statistics without page refresh */
+            if (latestStats) {
+                updateStatisticsUI(latestStats);
+            }
+
+        }
+    );
+
+}
 
     /* =====================================================
        TEXT SIZE
