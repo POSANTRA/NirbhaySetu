@@ -2105,48 +2105,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       GUIDE CARD EVENTS
-       ===================================================== */
+   /* =====================================================
+   GUIDE CARD EVENTS
+   ===================================================== */
 
-    document
-        .querySelectorAll(".situation-card")
-        .forEach(card => {
+document
+    .querySelectorAll(".situation-card")
+    .forEach(card => {
 
-            card.addEventListener("click", () => {
+        card.addEventListener("click", () => {
+
+            const guideType =
+                card.dataset.guide;
+
+            // Open guide immediately
+            showGuide(guideType);
+
+            // Record statistics separately
+            countSectionView(guideType);
+
+        });
+
+
+        card.addEventListener("keydown", event => {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
 
                 const guideType =
                     card.dataset.guide;
 
-                countSectionView(guideType);
-
+                // Open guide immediately
                 showGuide(guideType);
 
-            });
+                // Record statistics separately
+                countSectionView(guideType);
 
-
-            card.addEventListener("keydown", event => {
-
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
-
-                    event.preventDefault();
-
-                    const guideType =
-                        card.dataset.guide;
-
-                    countSectionView(guideType);
-
-                    showGuide(guideType);
-
-                }
-
-            });
+            }
 
         });
 
+    });
 
     /* =====================================================
        GUIDE MODAL EVENTS
