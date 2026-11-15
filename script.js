@@ -1885,10 +1885,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       DIRECT COUNTING (works even if Supabase is down)
+       Tries Supabase (shared count). If it fails or is
+       paused, counts on this device so numbers never break.
+       ===================================================== */
+
+    const LOCAL_STATS_KEY = "nirbhaysetu_local_stats";
+    let sharedFailed = false;
+
+    const withTimeout = (promise, ms) =>
+        Promise.race([promise, new Promise(resolve => setTimeout(() => resolve(null), ms))]);
+
+    function readLocalStats() {
+        try {
+            return normalizeStatistics(JSON.parse(localStorage.getItem(LOCAL_STATS_KEY) || "{}"));
+        } catch (e) {
+            return normalizeStatistics({});
+        }
+    }
+
+    function writeLocalStats(stats) {
+        try { localStorage.setItem(LOCAL_STATS_KEY, JSON.stringify(stats)); } catch (e) {}
+    }
+
+    async function recordEvent(eventType, sectionName = null) {
+        if (!sharedFailed) {
+            const ok = await withTimeout(recordEventRemote(eventType, sectionName), 5000);
+            if (ok) return true;
+            sharedFailed = true;
+            console.info("Shared counter unavailable - counting on this device.");
+        }
+        const stats = readLocalStats();
+        if (eventType === "visitor") {
+            stats.visitors += 1;
+        } else if (sectionName && Object.prototype.hasOwnProperty.call(stats.sections, sectionName)) {
+            stats.sections[sectionName] += 1;
+        }
+        writeLocalStats(stats);
+        return true;
+    }
+
+    async function loadSharedStatistics() {
+        if (!sharedFailed) {
+            const stats = await withTimeout(loadRemoteStatistics(), 5000);
+            if (stats) return stats;
+            sharedFailed = true;
+        }
+        return readLocalStats();
+    }
+
+
+    /* =====================================================
        RECORD EVENT
        ===================================================== */
 
-    async function recordEvent(
+    async function recordEventRemote(
         eventType,
         sectionName = null
     ) {
@@ -1951,7 +2002,7 @@ document.addEventListener("DOMContentLoaded", () => {
        LOAD SHARED STATISTICS
        ===================================================== */
 
-    async function loadSharedStatistics() {
+    async function loadRemoteStatistics() {
 
         try {
 
