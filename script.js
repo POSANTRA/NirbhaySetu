@@ -87,6 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         en: {
 
+            builtBy: "Built by",
+
+            tickerText: "Never share your OTP with anyone • Report fraud immediately • Call 1930 • cybercrime.gov.in",
+
             lastUpdateLabel: "Last Update:",
             visitorCountLabel: "Visitor Count:",
 
@@ -294,6 +298,10 @@ document.addEventListener("DOMContentLoaded", () => {
            ================================================= */
 
         mr: {
+
+            builtBy: "निर्माते:",
+
+            tickerText: "तुमचा OTP कोणालाही देऊ नका • फसवणूक झाल्यास त्वरित तक्रार करा • 1930 वर कॉल करा • cybercrime.gov.in",
 
             lastUpdateLabel:
                 "शेवटचे अपडेट:",
@@ -515,6 +523,10 @@ document.addEventListener("DOMContentLoaded", () => {
            ================================================= */
 
         hi: {
+
+            builtBy: "निर्माता:",
+
+            tickerText: "अपना OTP किसी को न बताएं • धोखाधड़ी होते ही तुरंत रिपोर्ट करें • 1930 पर कॉल करें • cybercrime.gov.in",
 
             lastUpdateLabel:
                 "अंतिम अपडेट:",
@@ -2023,12 +2035,31 @@ document.addEventListener("DOMContentLoaded", () => {
        UPDATE STATISTICS UI
        ===================================================== */
 
-    function updateStatisticsUI(
-        stats = defaultStatistics
-    ) {
+    let lastStats = defaultStatistics;
+
+    function setNum(el, target) {
+        target = Math.max(0, Math.floor(Number(target) || 0));
+        const from = parseInt(el.textContent, 10) || 0;
+        if (el._raf) cancelAnimationFrame(el._raf);
+        if (from === target || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            el.textContent = formatStatNumber(target);
+            return;
+        }
+        const t0 = performance.now();
+        const step = now => {
+            const p = Math.min(1, (now - t0) / 900);
+            el.textContent = formatStatNumber(Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3))));
+            if (p < 1) el._raf = requestAnimationFrame(step);
+        };
+        el._raf = requestAnimationFrame(step);
+    }
+
+    function updateStatisticsUI(stats = lastStats) {
 
         const safeStats =
             normalizeStatistics(stats);
+
+        lastStats = safeStats;
 
 
         /* -------------------------------------------------
@@ -2054,16 +2085,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (visitorCount) {
 
-            visitorCount.textContent =
-                visitorNumber;
+            setNum(visitorCount, safeStats.visitors);
 
         }
 
 
         if (statsVisitors) {
 
-            statsVisitors.textContent =
-                visitorNumber;
+            setNum(statsVisitors, safeStats.visitors);
 
         }
 
@@ -2092,10 +2121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (totalSectionViews) {
 
-            totalSectionViews.textContent =
-                formatStatNumber(
-                    totalViews
-                );
+            setNum(totalSectionViews, totalViews);
 
         }
 
@@ -2226,12 +2252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (element) {
 
-                element.textContent =
-                    formatStatNumber(
-                        safeStats.sections[
-                            type
-                        ]
-                    );
+                setNum(element, safeStats.sections[type]);
 
             }
 
@@ -3254,3 +3275,119 @@ if (languageSelect) {
     initializeStatistics();
 
 });
+
+/* =========================================================
+   POSANTRA UI LAYER — theme, animations, performance
+   ========================================================= */
+(function () {
+    "use strict";
+    const root = document.documentElement;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const $ = (q, c = document) => c.querySelector(q);
+    const $$ = (q, c = document) => Array.from(c.querySelectorAll(q));
+
+    /* ---------- THEME (dark / light) ---------- */
+    const meta = $('meta[name="theme-color"]');
+    const syncMeta = () => meta && meta.setAttribute("content",
+        root.dataset.theme === "light" ? "#F5F7FB" : "#060C1D");
+    syncMeta();
+    const themeBtn = $("#themeBtn");
+    if (themeBtn) themeBtn.addEventListener("click", () => {
+        const next = root.dataset.theme === "light" ? "dark" : "light";
+        root.dataset.theme = next;
+        try { localStorage.setItem("nirbhay_theme", next); } catch (e) {}
+        syncMeta();
+    });
+    try {
+        matchMedia("(prefers-color-scheme: light)").addEventListener("change", e => {
+            if (!localStorage.getItem("nirbhay_theme")) { root.dataset.theme = e.matches ? "light" : "dark"; syncMeta(); }
+        });
+    } catch (e) {}
+
+    /* ---------- SCROLL PROGRESS + ACTIVE NAV ---------- */
+    const bar = $("#scrollProgress");
+    let ticking = false;
+    addEventListener("scroll", () => {
+        if (ticking) return; ticking = true;
+        requestAnimationFrame(() => {
+            const max = root.scrollHeight - innerHeight;
+            const fab = $(".fab"); if (fab) fab.classList.toggle("show", scrollY > 520);
+            if (bar) bar.style.transform = "scaleX(" + (max > 0 ? scrollY / max : 0) + ")";
+            ticking = false;
+        });
+    }, { passive: true });
+
+    if ("IntersectionObserver" in window) {
+        const links = $$(".main-nav a");
+        const spy = new IntersectionObserver(es => es.forEach(e => {
+            if (e.isIntersecting) links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+        }), { rootMargin: "-45% 0px -50% 0px" });
+        $$("main section[id]").forEach(sec => spy.observe(sec));
+
+        /* ---------- SCROLL REVEAL (staggered) ---------- */
+        const targets = $$(".hero-content > *, .section-heading, .situation-card, .stat-card, .statistics-toggle, .report-card, .about-content, .brand-card");
+        const io = new IntersectionObserver(es => es.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        }), { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+        targets.forEach(el => {
+            const i = Array.prototype.indexOf.call(el.parentNode.children, el);
+            el.style.setProperty("--d", Math.min(i * 0.07, 0.5) + "s");
+            el.classList.add("reveal");
+            io.observe(el);
+        });
+    }
+
+    /* ---------- CARD SPOTLIGHT (desktop only) ---------- */
+    if (matchMedia("(hover: hover)").matches) {
+        document.addEventListener("pointermove", e => {
+            const c = e.target.closest && e.target.closest(".situation-card, .report-card");
+            if (!c) return;
+            const r = c.getBoundingClientRect();
+            c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+            c.style.setProperty("--my", (e.clientY - r.top) + "px");
+        }, { passive: true });
+    }
+
+    /* ---------- HERO NETWORK CANVAS ---------- */
+    const cv = $("#netCanvas");
+    if (cv && !reduce && cv.getContext) {
+        const ctx = cv.getContext("2d");
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0, pts = [], raf = 0, visible = true;
+        const build = () => {
+            const r = cv.getBoundingClientRect(); w = r.width; h = r.height;
+            cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const n = Math.min(64, Math.round(w * h / 17000));
+            pts = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h,
+                vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 }));
+        };
+        const draw = () => {
+            if (!visible) return;
+            ctx.clearRect(0, 0, w, h);
+            const col = root.dataset.theme === "light" ? "160,110,10" : "232,184,75";
+            ctx.fillStyle = "rgba(" + col + ",.8)";
+            for (const p of pts) {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > w) p.vx *= -1;
+                if (p.y < 0 || p.y > h) p.vy *= -1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, 6.283); ctx.fill();
+            }
+            for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+                const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
+                if (d < 120) {
+                    ctx.strokeStyle = "rgba(" + col + "," + (1 - d / 120) * .35 + ")";
+                    ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
+                }
+            }
+            raf = requestAnimationFrame(draw);
+        };
+        build();
+        let lastW = innerWidth;
+        addEventListener("resize", () => { if (innerWidth !== lastW) { lastW = innerWidth; build(); } });
+        new IntersectionObserver(e => {
+            visible = e[0].isIntersecting;
+            cancelAnimationFrame(raf);
+            if (visible) draw();
+        }).observe(cv);
+    }
+})();
